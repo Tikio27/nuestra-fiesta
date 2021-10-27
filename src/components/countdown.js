@@ -2,6 +2,7 @@ import './countdown.scss'
 import React from 'react';
 import moment from 'moment';
 import Delayed from './utils/delayed';
+import Tilt from 'react-parallax-tilt';
 
 class Countdown extends React.Component {
 
@@ -27,7 +28,6 @@ class Countdown extends React.Component {
     clearInterval(this.timer);
     this.timer = null;
     const endDate = Number(moment(`${this.state.dateValue} ${this.state.timeValue} ${this.state.ampmValue}`, 'MM-DD-YYYY hh:mm A').format('X'))
-    console.log(endDate)
 
     if (endDate && endDate !== '') {
       this.timer = setInterval(() => this.playTimer(endDate), 1000);
@@ -67,40 +67,49 @@ class Countdown extends React.Component {
 			  <div className="slider-inner">
           {this.timer && (
             <Delayed waitBeforeShow={2000}>
-              <div className="countdown">
-                <div className="animate__animated animate__zoomIn">
-                  <div className="countdown-header">
-                    <span>Proximamente</span>
-                    <div className="countdown-header-title">
-                      <p>Camila</p>
+                <div className="countdown">
+                  <Tilt
+                    className="track-on-window parallax-effect-glare-scale"
+                    perspective={500}
+                    glareEnable={true}
+                    glarePosition="all"
+                    trackOnWindow={true}
+                    glareMaxOpacity={0.45}
+                    scale={1.02}
+                  >
+                    <div className="animate__animated animate__zoomIn inner-element">
+                      <div className="countdown-header">
+                        <span>Próximamente</span>
+                        <div className="countdown-header-title">
+                          <span>XV's Camila</span>
+                        </div>
+                        {/* <div className="countdown-header-desc">
+                          <span>Mis XV Años</span>
+                        </div> */}
+                      </div>
+                      <div className="d-flex flex-wrap justify-content-center ">
+                        <div className="card">
+                          <div className="countdown-value">{this.state.countdown.days}</div>
+                          <div className="countdown-unit">Dias</div>
+                        </div>
+                        <div className="card">
+                          <div className="countdown-value">{this.state.countdown.hours}</div>
+                          <div className="countdown-unit">Horas</div>
+                        </div>
+                        <div className="card">
+                          <div className="countdown-value">{this.state.countdown.mins}</div>
+                          <div className="countdown-unit">Minutos</div>
+                        </div>
+                        <div className="card">
+                          <div className="countdown-value">{this.state.countdown.secs}</div>
+                          <div className="countdown-unit">Segundos</div>
+                        </div>
+                      </div>
+                      <span className="save-date d-block">Sabado 12 de Febrero 2022</span>
+                      <span className="save-date d-block">Guadalajara, Jalisco</span>
                     </div>
-                    <div className="countdown-header-desc">
-                      <p>Mis XV Años</p>
-                    </div>
-                  </div>
-                  <div className="d-sm-flex">
-                    <div className="card">
-                      <div className="countdown-value">{this.state.countdown.days}</div>
-                      <div className="countdown-unit">Dias</div>
-                    </div>
-                    <div class="d-flex align-items-center mr-5 ml-5 mt-n4"><span class="f-title ">:</span></div>
-                    <div className="card">
-                      <div className="countdown-value">{this.state.countdown.hours}</div>
-                      <div className="countdown-unit">Horas</div>
-                    </div>
-                    <div className="card">
-                      <div className="countdown-value">{this.state.countdown.mins}</div>
-                      <div className="countdown-unit">Minutos</div>
-                    </div>
-                    <div className="card">
-                      <div className="countdown-value">{this.state.countdown.secs}</div>
-                      <div className="countdown-unit">Segundos</div>
-                    </div>
-                  </div>
-                  <p className="save-date">Sabado 12 de Febrero 2022</p>
-                  <p className="save-date">Guadalajara, Jalisco</p>
+                  </Tilt>
                 </div>
-              </div>
             </Delayed>
           )}
 
@@ -111,6 +120,7 @@ class Countdown extends React.Component {
             <div className="video-overlay"></div>
           </div>
         </div>
+
       </section>
     );
   }

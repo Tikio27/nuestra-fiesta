@@ -1,6 +1,8 @@
 @import '../variables/variables';
 @import '../styles/sliders';
+@import 'bootstrap/scss/bootstrap';
 
+$basic: 543px;
 // BASE PAGE STYLES
 
 .countdown {
@@ -10,6 +12,8 @@
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
+  padding: 24px;
 
   .countdown-header,
   .save-date {
@@ -17,13 +21,31 @@
     text-transform: capitalize;
     text-align: center;
     font-family: 'Pacifico', cursive;
-    font-size: 24px;
+    font-size: 12px;
   }
   .countdown-header {
-    font-size: 48px;
+    font-size: 24px;
   }
   .animate__animated {
     animation-duration: 10s;
+  }
+
+  @include media-breakpoint-up(md) {
+    .countdown-header {
+      font-size: 36px;
+    }
+    .save-date {
+      font-size: 24px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .countdown-header {
+      font-size: 48px;
+    }
+    .save-date {
+      font-size: 24px;
+    }
   }
 }
 
@@ -33,16 +55,19 @@
   display: inline-block;
   margin: 10px;
   min-width: 100px;
-  padding: 20px 0;
+  padding: 10px 0;
   font-family: 'Rubik', sans-serif;
   .countdown-value {
     color: $white;
-    font-size: 2rem;
+    font-size: 24px;
     margin-bottom: 10px;
   }
   .countdown-unit {
     color: $white;
     text-transform: capitalize;
+  }
+  @include media-breakpoint-up(md) {
+    padding: 20px 0;
   }
 }
 
@@ -62,5 +87,25 @@
   }
   to {
     margin-top: 10%;
+  }
+}
+
+.parallax-effect-glare-scale {
+  // @include background;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+
+  .inner-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // font-size: 35px;
+    font-style: italic;
+    color: white;
+    transform: translateZ(60px);
   }
 }

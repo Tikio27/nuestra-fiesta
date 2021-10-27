@@ -144,13 +144,6 @@ html[xmlns] .slider-wrap {
 	visibility: hidden;
 }
 
-// @include media-breakpoint-up(lg){
-// 	.h-auto .swiper-wrapper,
-// 	.min-vh-0 .swiper-wrapper {
-// 		height: 75vh;
-// 	}
-// }
-
 .slider-inner.slider-inner-relative {
 	position: relative !important;
 	height: auto !important;
