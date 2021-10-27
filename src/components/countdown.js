@@ -20,7 +20,7 @@ class Countdown extends React.Component {
       }
     };
     this.timer = null;
-    this.videoUrl = '/assets/videos/firewalls-copy.mp4';
+    this.videoUrl = '/assets/videos/firewalls.mp4';
   }
 
 
