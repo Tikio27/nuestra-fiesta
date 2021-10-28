@@ -26,6 +26,10 @@ $basic: 543px;
   .countdown-header {
     font-size: 24px;
   }
+  .countdown-header-title {
+    font-size: 12px;
+    font-family: 'Rubik', sans-serif;
+  }
   .animate__animated {
     animation-duration: 10s;
   }
@@ -36,6 +40,9 @@ $basic: 543px;
     }
     .save-date {
       font-size: 24px;
+    }
+    .countdown-header-title {
+      font-size: 18px;
     }
   }
 

@@ -79,13 +79,10 @@ class Countdown extends React.Component {
                   >
                     <div className="animate__animated animate__zoomIn inner-element">
                       <div className="countdown-header">
-                        <span>Próximamente</span>
+                        <span>XV's Camila</span>
                         <div className="countdown-header-title">
-                          <span>XV's Camila</span>
+                          <span>Nos vemos en</span>
                         </div>
-                        {/* <div className="countdown-header-desc">
-                          <span>Mis XV Años</span>
-                        </div> */}
                       </div>
                       <div className="d-flex flex-wrap justify-content-center ">
                         <div className="card">
