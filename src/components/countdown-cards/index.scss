@@ -1,0 +1,31 @@
+@import '../../core.scss';
+
+.countdown-cards .card {
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+  min-width: 100px;
+  padding: 10px 0;
+  font-family: 'Rubik', sans-serif;
+  color: $black;
+  box-shadow: 0px 0px 18px 7px rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 0px 0px 18px 7px rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: 0px 0px 18px 7px rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  background-color: $white;
+  .countdown-value {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .countdown-unit {
+    text-transform: capitalize;
+  }
+  @include media-breakpoint-up(md) {
+    padding: 20px 0;
+  }
+
+  // &:hover {
+  //   transform: scale(1.2);
+  //   transition-duration: 1s;
+  // }
+}

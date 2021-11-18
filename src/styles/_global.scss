@@ -1,1 +1,27 @@
-@import 'bootstrap/scss/bootstrap';
+.primary-font {
+  font-family: 'Pacifico', cursive;
+}
+
+.secondary-font {
+  font-family: kiona,sans-serif;
+}
+
+.text-shadow_border {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.text-shadow_shadow {
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+
+.text-shine {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  from { -webkit-mask-position: 150%; }
+  to { -webkit-mask-position: -50%; }
+}

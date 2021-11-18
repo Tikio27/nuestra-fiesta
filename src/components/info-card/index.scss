@@ -1,0 +1,506 @@
+@import '../../core.scss';
+@import './ballon-animations.scss';
+
+.over-hide {
+  overflow: hidden;
+}
+
+.info-card {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  display: block;
+
+  [type="checkbox"]:checked,
+  [type="checkbox"]:not(:checked){
+    position: absolute;
+    left: -9999px;
+  }
+  .info-card-checkbox:checked + label,
+  .info-card-checkbox:not(:checked) + label {
+    position: relative;
+    display: flex;
+    text-align: center;
+    width: 260px;
+    height: 44px;
+    border-radius: 4px;
+    padding: 0;
+    margin: 0 auto;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 44px;
+    padding: 0 25px;
+    padding-right: 27px;
+    overflow: hidden;
+    color: #fff;
+    text-align: left;
+
+    &::before {
+      position: absolute;
+      content: '';
+      z-index: -2;
+      background-color: #102770;
+      width: 100%;
+      height: 100%;
+      display: block;
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      z-index: -1;
+      background-color: #ffeba7;
+      width: 128px;
+      height: 40px;
+      display: block;
+      top: 2px;
+      left: 2px;
+      border-radius: 2px;
+      transition: left 300ms linear;
+    }
+  }
+
+  .info-card-checkbox:checked + label:after {
+    left: 130px;
+  }
+  .block-diff {
+    display: block;
+    mix-blend-mode: difference;
+  }
+  .float-right {
+    padding-left: 25px;
+  }
+
+  .card-3d-wrap {
+    position: relative;
+    width: auto;
+    max-width: 510px;
+    height: 510px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    margin-top: 90px;
+  }
+  .card-3d-wrapper {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: transform 700ms 400ms ease-out;
+    // &:hover {
+    //   transform: scale3d(1, 1, 1.8);
+    // }
+  }
+
+  .card-front {
+    z-index: 1;
+  }
+
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    position: absolute;
+    border-radius: 6px;
+    left: 0;
+    top: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 12px 35px 0 rgba(16, 39, 112,.5);
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+  }
+
+  .info-card-checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+    transform: rotateY(180deg);
+    transition: transform 700ms 400ms ease-out;
+  }
+  .info-card-wrap {
+    position: relative;
+    // padding-top: 160px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    .info-card--title {
+      position: relative;
+      width: 100%;
+      display: block;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 22px;
+      line-height: 1.7;
+      color: #A1D4CD;
+      transform: translate3d(0, 0, 35px) perspective(100px);
+    }
+
+    .info-card--location {
+      position: relative;
+      display: block;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-size: 36px;
+      line-height: 1.1;
+      color: #A1D4CD;
+      transform: translate3d(0, 0, 35px) perspective(100px);
+    }
+
+    p {
+      position: relative;
+      width: 100%;
+      display: block;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.2;
+      letter-spacing: 2px;
+      color: #A1D4CD;
+      transform: translate3d(0, 0, 35px) perspective(100px);
+    }
+  }
+
+  .card-back .info-card--location,
+  .card-back p,
+  .card-back .info-card--title {
+    color: $white;
+  }
+
+  .link {
+    transform: translate3d(0, 0, 35px) perspective(100px);
+  }
+
+  .img-wrap img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .img-wrap {
+    &.img-lines {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      img {
+        height: 100%;
+      }
+    }
+    &.img-center {
+      position: relative;
+      display: block;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      // border-top-left-radius: 6px;
+      // border-top-right-radius: 6px;
+      // overflow: hidden;
+      // transform: translate3d(0, 0, 150px) perspective(200px);
+      width: 100%;
+      height: 100%;
+
+      .img-cruz {
+        position: absolute;
+        display: block;
+        top: -45px;
+        left: calc(50% - 75px);
+        z-index: 5;
+        width: 150px;
+        transform: translate3d(0, 0, 45px) perspective(100px) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 2000ms 1300ms ease, opacity 200ms 1300ms ease;
+      }
+      .img-decoration-left {
+        position: absolute;
+        display: block;
+        left: -40px;
+        top: -40px;
+        z-index: 5;
+        width: 120px;
+        transform: translate3d(80px, 0, 45px) perspective(100px);
+        // transform: translateX(80px)  perspective(100px);
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 400ms 1200ms ease, opacity 400ms 1200ms ease;
+      }
+      .img-decoration-right {
+        position: absolute;
+        display: block;
+        right: -40px;
+        top: -40px;
+        z-index: 5;
+        width: 120px;
+        transform: translate3d(-80px, 0, 45px) perspective(100px);
+        // transform: translateX(-80px)  perspective(100px);
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 400ms 1200ms ease, opacity 400ms 1200ms ease;
+      }
+    }
+
+    &.img-branches {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      .img-left-branch1 {
+        position: absolute;
+        top: 60px;
+        left: -30px;
+      }
+      .img-left-branch2 {
+        position: absolute;
+        top: -4px;
+        left: -20px;
+      }
+      .img-right-branch1 {
+        position: absolute;
+        bottom: 60px;
+        right: -25px;
+      }
+      .img-right-branch2 {
+        position: absolute;
+        bottom: -8px;
+        right: -8px;
+      }
+      .img-left-branch1,
+      .img-left-branch2,
+      .img-right-branch1,
+      .img-right-branch2 {
+        width: auto;
+        transform: translate3d(0, 0, 25px) perspective(100px) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 300ms 1300ms ease, opacity 200ms 1300ms ease;
+      }
+    }
+  }
+
+  .info-card-checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+
+    .img-cruz {
+      opacity: 0;
+      transform: translate3d(0px, -100px, 55px) perspective(100px);
+      pointer-events: none;
+      transition: transform 700ms ease, opacity 200ms 150ms ease;
+    }
+    .img-decoration-left {
+      opacity: 0;
+      transform: translate3d(-50px, 25px, 45px) perspective(100px);
+      pointer-events: none;
+      transition: transform 400ms ease, opacity 200ms 150ms ease;
+    }
+
+    .img-decoration-right {
+      opacity: 0;
+      transform: translate3d(50px, 25px, 45px) perspective(100px);
+      pointer-events: none;
+      transition: transform 400ms ease, opacity 200ms 150ms ease;
+    }
+    .img-left-branch1,
+    .img-left-branch2,
+    .img-right-branch1,
+    .img-right-branch2 {
+      opacity: 0;
+      transform: translate3d(0, 0, 25px) perspective(100px) scale(0.4);
+      pointer-events: none;
+      transition: transform 400ms ease, opacity 200ms 150ms ease;
+    }
+
+    .img-cocktail-gifts {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(0, 0, 35px) perspective(100px) scale(1);
+      transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
+    }
+    .img-cocktail-ballons {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(0, 0, 35px) perspective(100px) scale(1);
+      transition: transform 4000ms 1300ms ease, opacity 300ms 1300ms ease;
+    }
+  }
+
+  .info-card--content-data {
+    position: absolute;
+    top: 175px;
+    left: 0;
+  }
+  .info-card--content-data,
+  .img-center,
+  .img-cruz,
+  .img-branches,
+  .img-cocktail-ballons,
+  .img-cocktail-gifts,
+  .ballon-left-1,
+  .ballon-left-2,
+  .ballon-left-3,
+  .ballon-right-1,
+  .ballon-right-2,
+  .ballon-right-3 {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .card-back .img-wrap {
+    &.img-cocktail-gifts {
+      position: absolute;
+      bottom: -40px;
+      width: 390px;
+      left: -25px;
+      transform: translate3d(0, 100px, 35px) perspective(100px) scale(0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 400ms 100ms ease, opacity 200ms 250ms ease;
+    }
+    &.img-cocktail-ballons {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: translate3d(0, 300px, 30px) perspective(100px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 4s 1s ease, opacity 200ms 250ms ease;
+      
+      // .img-cocktail-ballons--left {
+      //   transform: translate3d(0, 100px, 35px) perspective(100px);
+      //   opacity: 0;
+      //   pointer-events: none;
+      //   transition: transform 4s 1s ease, opacity 200ms 250ms ease;
+      // }
+
+      .ballon-left-1 {
+        position: absolute;
+        top: 80px;
+        left: -30px;
+        width: 150px;
+         -webkit-animation: balloon1 6s ease infinite;
+        -moz-animation: balloon1 6s ease infinite;
+        -o-animation: balloon1 6s ease infinite;
+        animation: balloon1 6s ease infinite;
+        z-index: 1;
+      }
+      .ballon-left-2 {
+        position: absolute;
+        top: 0;
+        left: -60px;
+        width: 150px;
+         -webkit-animation: balloon2 6s ease infinite;
+        -moz-animation: balloon2 6s ease infinite;
+        -o-animation: balloon2 6s ease infinite;
+        animation: balloon2 6s ease infinite;
+      }
+      .ballon-left-3 {
+        position: absolute;
+        top: 150px;
+        left: -60px;
+        width: 150px;
+         -webkit-animation: balloon3 6s ease infinite;
+        -moz-animation: balloon3 6s ease infinite;
+        -o-animation: balloon3 6s ease infinite;
+        animation: balloon3 6s ease infinite;
+      }
+      .ballon-right-1 {
+        position: absolute;
+        top: 0;
+        right: -30px;
+        width: 150px;
+         -webkit-animation: balloon4 6s ease infinite;
+        -moz-animation: balloon4 6s ease infinite;
+        -o-animation: balloon4 6s ease infinite;
+        animation: balloon4 6s ease infinite;
+      }
+      .ballon-right-1 {
+        position: absolute;
+        top: -30px;
+        right: -80px;
+        width: 150px;
+         -webkit-animation: balloon4 6s ease infinite;
+        -moz-animation: balloon4 6s ease infinite;
+        -o-animation: balloon4 6s ease infinite;
+        animation: balloon4 6s ease infinite;
+      }
+      .ballon-right-2 {
+        position: absolute;
+        top: 80px;
+        right: -50px;
+        width: 150px;
+         -webkit-animation: balloon1 6s ease infinite;
+        -moz-animation: balloon1 6s ease infinite;
+        -o-animation: balloon1 6s ease infinite;
+        animation: balloon1 6s ease infinite;
+      }
+      .ballon-right-3 {
+        position: absolute;
+        top: 160px;
+        right: -80px;
+        width: 150px;
+         -webkit-animation: balloon2 6s ease infinite;
+        -moz-animation: balloon2 6s ease infinite;
+        -o-animation: balloon2 6s ease infinite;
+        animation: balloon2 6s ease infinite;
+      }
+    }
+  }
+  .card-back .info-card--content-data {
+    top: 120px;
+  }
+
+  .card-back .link {
+    background-color: white;
+    border-color: #0d6efd;
+    color: #0d6efd;
+    &:hover {
+      border-color: $white;
+    }
+  }
+
+  .img-cocktail-bg {
+    max-width: 510px;
+    max-height: 510px;
+    overflow: hidden;
+  }
+}

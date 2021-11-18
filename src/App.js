@@ -1,27 +1,28 @@
+import './App.scss';
 import 'animate.css'; //npm install animate.css
 import React from 'react';
-import Countdown from './components/countdown';
 import Events from './components/events';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <ParallaxProvider>
         <main>
           <Router>
             <Switch>
-              <Route exact path="/">
-                <Countdown />
-              </Route>
-              <Route path="/:id">
+              <Route path="/:id/:guest">
                   <Events/>
+              </Route>
+              <Route path="/:id/">
+                <Events />
               </Route>
             </Switch>
           </Router>
         </main>
-      </React.Fragment>
+      </ParallaxProvider>
     );
   }
 }

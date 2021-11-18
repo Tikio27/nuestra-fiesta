@@ -1,0 +1,61 @@
+{
+  "heroText": [{
+    "start": "0vh",
+    "end": "100vh",
+    "properties": [{
+        "startValue": 1,
+        "endValue": 1.2,
+        "property": "scale"
+      },
+      {
+        "startValue": 1,
+        "endValue": 0.3,
+        "property": "opacity"
+      },
+      {
+        "startValue": 0,
+        "endValue": 110,
+        "unit": "vh",
+        "property": "translateY"
+      }
+    ]
+  }],
+  "opacity": [{
+    "start": "self",
+    "duration": "100vh",
+    "properties": [{
+        "startValue": 0.5,
+        "endValue": 1,
+        "property": "scale"
+      },
+      {
+        "startValue": 0,
+        "endValue": 1,
+        "property": "opacity"
+      },
+      {
+        "startValue": -80,
+        "endValue": 0,
+        "unit": "vh",
+        "property": "translateY"
+      }
+    ]
+  }],
+  "rsvp": [{
+    "start": "self",
+    "duration": "50vh",
+    "properties": [
+      {
+        "startValue": 0,
+        "endValue": 1,
+        "property": "opacity"
+      },
+      {
+        "startValue": -80,
+        "endValue": 20,
+        "unit": "vh",
+        "property": "translateY"
+      }
+    ]
+  }]
+}
