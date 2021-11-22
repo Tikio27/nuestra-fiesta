@@ -13,6 +13,9 @@ import InfoCard from '../info-card';
 import Sparkles from '../utils/sparkle';
 import RsvpCard from './rsvp-card';
 import { Intro } from './intro';
+import { useMediaQuery } from 'react-responsive'
+import Quotes from './quotes';
+import QuoteMobile from './quoteMobile';
 
 function Events() {
   const { id, guest } = useParams();
@@ -49,17 +52,24 @@ function Events() {
     console.log(`Event Data: ${JSON.stringify(eventData)}`);
   }
 
+  console.log(window.innerWidth);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 992px)'
+  })
+
   return (
     <div className="main">
       {eventData && (
         <>
-          <Intro title={eventData.eventTitle} subtitle={eventData.eventSubtitle}/>
-          <section className="event__hero  event__section-layout">
-            <Parallax bgImage="/assets/img/hero.jpg" strength={500} className="event__background">
+          <section className="event__intro">
+            <Intro title={eventData.eventTitle} subtitle={eventData.eventSubtitle} />
+          </section>
+          <section className="event__hero">
+            <Parallax bgImage="/assets/img/hero.jpg" strength={300} className="event__background">
               <span className="gradient-overlay"></span>
-                <div className="event__title-header event__section-view">
-                <Sparkles>
-                  <div className="event__title-header-view">
+                {/* <div className="event__title-header event__section-view"> */}
+              <Sparkles style={{width: "100%", height: "200vh"}}>
+                  {/* <div className="event__title-header-view"> */}
                     {/* <Plx
                       parallaxData={ parallaxData.heroText }
                     >
@@ -70,16 +80,16 @@ function Events() {
                         </span>
                       </div>
                     </Plx> */}
-                  </div>
-                </Sparkles>
-              </div>
+                  {/* </div> */}
+              </Sparkles>
+              {/* </div> */}
             </Parallax>
           </section>
 
-          <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
+          {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
 
           <section className="event__celebrant">
-            <Parallax strength={500} bgImage="/assets/img/bg/bg-sky@3x.png" className="event__background">
+            <Parallax strength={500} bgImage="/assets/img/bg/moon_1@3x.png" className="event__celebrant-bg">
               <Plx parallaxData={ parallaxData.opacity }>
                 <div className="mx-auto text-center">
                   <StickyText
@@ -92,55 +102,32 @@ function Events() {
             </Parallax>
           </section>
 
-          <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
-
-          <section className="event__quotes event__section-layout">
-            <Parallax blur={5} strength={-500} bgImage="/assets/img/sky4.png">
-              <div className="container">
-                <ScrollParallax x={[-50, 50]}>
-                  <div className="imgBx jarallax">
-                    <img className="jarallax-img" src='/assets/img/foto3.jpg' />
-                  </div>
-                </ScrollParallax>
-                <div className="event__quotes-text">
-                  <ScrollParallax y={[0, -150]}>
-                    <div className="content" data-jarallax-element="-200 0">
-                      <p className="secondary-font type-normal-18">{eventData.quotes.firstQuote}</p>
-                    </div>
-                  </ScrollParallax>
-                </div>
-              </div>
-              <div className="container">
-                <div className="event__quotes-text">
-                  <ScrollParallax y={[0, -250]}>
-                    <div className="content" data-jarallax-element="-200 0">
-                        <p className="secondary-font type-normal-18">{eventData.quotes.secondQuote}</p>
-                    </div>
-                  </ScrollParallax>
-                </div>
-                <ScrollParallax x={[100, -50]}>
-                  <div className="imgBx jarallax">
-                    <img className="jarallax-img" src='/assets/img/foto4.jpg' />
-                  </div>
-                </ScrollParallax>
-              </div>
+          {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
+          {isDesktopOrLaptop && (
+            <Quotes firstQuote={eventData.quotes.firstQuote} secondQuote={eventData.quotes.secondQuote} />
+          )}
+          {!isDesktopOrLaptop && (
+            <Parallax blur={5} strength={500} bgImage="/assets/img/sky4.png">
+            <>
+              <QuoteMobile quote={eventData.quotes.firstQuote} imgUrl="/assets/img/foto3.jpg" />
+              <QuoteMobile quote={eventData.quotes.secondQuote} imgUrl="/assets/img/foto4.jpg" />
+            </>
             </Parallax>
-          </section>
+          )}
 
           <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
 
           <section className="event__parents">
-            <Parallax strength={500} bgImage="/assets/img/bendicion5.jpg">
+            <Parallax strength={500} bgImage="/assets/img/bendicion3.jpg">
+              <div className="event__parents-overlay">
+                <img src="/assets/img/frames/shine.png"/>
+              </div>
               <div className="event__parents-root">
                   <div className="event__parents-container">
                       <ScrollParallax
-                          offsetYMax={-20}
-                          offsetYMin={20}
-                          offsetXMax={'-500px'}
-                          offsetXMin={'500px'}
-                          y={[-50, 50]}
-                          // x={[-20, 20]}
-                          // slowerScrollRate
+                          y={[-50, 10]}
+                          x={[-50, 10]}
+                          slowerScrollRate
                           className="event__parents-parallax"
                       >
                             <div className="event__parents-content text-center">
@@ -150,12 +137,8 @@ function Events() {
                             </div>
                       </ScrollParallax>
                       <ScrollParallax
-                          offsetYMax={-30}
-                          offsetYMin={0}
-                          offsetXMax={40}
-                          offsetXMin={-20}
-                          y={[-50, -100]}
-                          //  x={[20, -20]}
+                          y={[-100, -200]}
+                          x={[20, -20]}
                           slowerScrollRate
                           className="event__godparents"
                       >
@@ -245,7 +228,7 @@ function Events() {
               <div className="p-4 text-center">
                 <p className="type-normal-36 primary-font">Codigo de Vestimenta</p>
                 <p className="type-normal-36 primary-font">Formal</p>
-                <img src="/assets/img/dresscode.png"/>
+                <img src="/assets/img/dresscode.png" className="dress-code-img"/>
               </div>
             </div>
           </section>

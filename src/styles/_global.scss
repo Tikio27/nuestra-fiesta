@@ -14,6 +14,29 @@
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
+.text-3d-wrap {
+    position: relative;
+    width: auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  .text-3d-wrapper {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: transform 700ms 400ms ease-out;
+
+    .text-3d {
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transition: transform 700ms 400ms ease-out;
+      transform: translate3d(0, 0, 35px) perspective(100px);
+    }
+  }
 
 .text-shine {
   -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);

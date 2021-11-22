@@ -2,7 +2,7 @@
 
 .event__section-layout {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   overflow: hidden;
 }
@@ -20,24 +20,19 @@
 }
 
 .event__background {
-  height: 100vh;
+  height: 200vh;
   img {
     background-position: 53.7786% 48.9258%;
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
-    height: 100vh !important;
+    height: 200vh !important;
+    width: 100vw !important;
   }
-
-  // -webkit-transform: translate3d(0,0,0);
-  // -moz-transform: translate3d(0,0,0);
-  // -o-transform: translate3d(0,0,0);
-  // -ms-transform: translate3d(0,0,0);
-  // transform: translate3d(0,0,0);
 }
 
 .event__hero {
-  height: 100vh;
+  height: 200vh;
   width: 100%;
 }
 
@@ -108,14 +103,18 @@
   left: -25%;
   background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
   background-color: rgba(0, 0, 0, 0);
-  min-height: 100vh;
+  min-height: 200vh;
   position: absolute;
   height: auto;
 }
 
-// .event__quotes {
-//   padding: 50px 0;
-// }
+.event__celebrant-bg {
+  height: 150vh;
+  // width: 100vw;
+  img {
+    height: auto !important;
+  }
+}
 
 .event__celebrant,
 .event__presentation {
@@ -172,33 +171,16 @@
   }
 }
 
-
-// body:before {
-//   content: "Mis XV's";
-//   position: fixed;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   font-size: 17em;
-//   font-weight: 700;
-//   color: transparent;
-//   -webkit-text-stroke: 1px #555;
-//   font-family: 'Pacifico', cursive;
-// }
-// section h2 {
-//   margin-left: 200px;
-//   font-size: 4em;
-//   color: #fff;
-//   margin-bottom: 20px;
-// }
 .event__quotes .container {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  height: 50vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include media-breakpoint-up(lg) {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .imgBx {
     position: relative;
@@ -228,7 +210,7 @@
 
   .event__quotes-text .parallax-outer .parallax-inner {
     position: absolute;
-    // color: #0a71d4b3;
+    color: #0a71d4b3;
     right: 0;
     margin-top: 200px;
     // margin-bottom: 40px;
@@ -237,10 +219,14 @@
     z-index: 1;
     max-width: 400px;
     margin: 0 18px;
-    color: transparent;
-    background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
-    -webkit-background-clip: text;
-    background-clip: text;
+    background-color: $white;
+
+    p {
+      // color: transparent;
+      // background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+      // -webkit-background-clip: text;
+      // background-clip: text;
+    }
   }
 
   &:nth-child(even) .event__quotes-text .parallax-outer .parallax-inner {
@@ -275,7 +261,7 @@
 .event__parents-root {
   position: relative;
   // width: 100%;
-  height: 100vh;
+  height: 200vh;
   // display: flex;
   // flex-flow: column wrap;
   // align-items: space-around;
@@ -297,12 +283,12 @@
   right: 0;
 }
 
-.event__parents-parallax {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
+// .event__parents-parallax {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+// }
 
 .event__presentation {
   height: 100vh;
@@ -365,4 +351,22 @@
 
 .event__locations {
   height: auto;
+}
+
+.dress-code-img {
+  max-width: 100%;
+}
+
+.event__parents-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
