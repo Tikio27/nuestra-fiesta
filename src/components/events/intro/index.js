@@ -70,32 +70,32 @@ export const Intro = ({ title, subtitle }) => {
                 className="intro-content primary-font type-normal-48 text-shadow_border">
                 <div className="text-3d-wrapper">
                   <div className="text-3d">
-                <DIV
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: scrubPercent >= 10 ? 1 : 0 }}
-                >
-                  Bienvenidos
-                </DIV>
-                <DIV
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: scrubPercent >= 20 ? 1 : 0 }}
-                >
-                  Al inicio de
-                </DIV>
-                <DIV
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: scrubPercent >= 30 ? 1 : 0 }}
-                >
-                  Mi
-                </DIV>
-                <DIV
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: scrubPercent >= 40 ? 1 : 0 }}
-                >
-                  Cuento de hadas
+                    <DIV className="intro-text"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: scrubPercent >= 10 ? 1 : 0 }}
+                    >
+                      Bienvenidos
                     </DIV>
-                    </div>
-                    </div>
+                    <DIV className="intro-text"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: scrubPercent >= 20 ? 1 : 0 }}
+                    >
+                      Al inicio de
+                    </DIV>
+                    <DIV className="intro-text"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: scrubPercent >= 30 ? 1 : 0 }}
+                    >
+                      Mi
+                    </DIV>
+                    <DIV className="intro-text"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: scrubPercent >= 40 ? 1 : 0 }}
+                    >
+                      Cuento de hadas
+                    </DIV>
+                  </div>
+                </div>
               </div>
             </Sparkles>
           </motion.div>

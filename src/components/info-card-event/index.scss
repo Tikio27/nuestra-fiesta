@@ -1,0 +1,570 @@
+@import '../../core.scss';
+@import './fly-animations.scss';
+
+$blue-color: #0833A2;
+
+.over-hide {
+  overflow: hidden;
+}
+
+.info-card-event {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  display: block;
+
+  [type="checkbox"]:checked,
+  [type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+  .info-card-checkbox:checked + label,
+  .info-card-checkbox:not(:checked) + label {
+    position: relative;
+    display: flex;
+    text-align: center;
+    width: 260px;
+    height: 44px;
+    border-radius: 14px;
+    padding: 0;
+    margin: 0 auto;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 44px;
+    padding: 0 25px;
+    padding-right: 27px;
+    overflow: hidden;
+    color: $white;
+    text-align: left;
+    border: solid 1px $blue-color;
+
+    &::before {
+      position: absolute;
+      content: '';
+      z-index: -2;
+      background-color: $white;
+      width: 100%;
+      height: 100%;
+      display: block;
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      z-index: -1;
+      background-color: $blue-color;
+      width: 126px;
+      height: 40px;
+      display: block;
+      top: 1px;
+      left: 2px;
+      border-radius: 12px;
+      transition: left 300ms linear;
+    }
+  }
+
+  .info-card-checkbox:checked + label:after {
+    left: 130px;
+  }
+  .block-diff {
+    display: block;
+  }
+  .float-right {
+    color: $blue-color;
+  }
+  &.is-checked {
+    .float-right {
+      color: $white;
+    }
+    .block-diff {
+      color: $blue-color;
+    }
+  } 
+  .float-right {
+    padding-left: 25px;
+  }
+
+  .card-3d-wrap {
+    position: relative;
+    width: auto;
+    max-width: 510px;
+    height: 600px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    margin-top: 30px;
+  }
+  .card-3d-wrapper {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: transform 700ms 400ms ease-out;
+    // &:hover {
+    //   transform: scale3d(1, 1, 1.8);
+    // }
+  }
+
+  .card-front {
+    z-index: 1;
+    background-image: url("/public/assets/img/ceremony/card/background2.png");
+  }
+
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    position: absolute;
+    border-radius: 6px;
+    left: 0;
+    top: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 12px 35px 0 rgba(16, 39, 112,.5);
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+  }
+
+  .info-card-checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+    transform: rotateY(180deg);
+    transition: transform 700ms 400ms ease-out;
+  }
+  .info-card-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+
+    .info-card--title {
+      position: relative;
+      width: 100%;
+      display: block;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 22px;
+      line-height: 1.7;
+      transform: translate3d(0, 0, 35px) perspective(100px);
+    }
+
+    .info-card--location {
+      position: relative;
+      display: block;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-size: 36px;
+      line-height: 1.1;
+      transform: translate3d(0, 0, 35px) perspective(100px);
+    }
+
+    p {
+      position: relative;
+      width: 100%;
+      display: block;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.2;
+      letter-spacing: 2px;
+      transform: translate3d(0, 0, 35px) perspective(100px);
+    }
+  }
+
+  .link {
+    transform: translate3d(0, 0, 35px) perspective(100px);
+  }
+
+  .img-wrap img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .img-wrap {
+    &.img-center {
+      position: relative;
+      display: block;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+
+      .img-cruz {
+        position: absolute;
+        display: block;
+        top: 35px;
+        left: calc(50% - 65px);
+        z-index: 5;
+        width: 130px;
+        transform: translate3d(0, 0, 45px) perspective(100px) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 2000ms 1300ms ease, opacity 200ms 1300ms ease;
+      }
+      .img-decoration-left {
+        position: absolute;
+        display: block;
+        left: 90px;
+        top: 90px;
+        z-index: 5;
+        width: 60px;
+        transform: translate3d(80px, 0, 45px) perspective(100px);
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 400ms 1200ms ease, opacity 400ms 1200ms ease;
+      }
+      .img-decoration-right {
+        position: absolute;
+        display: block;
+        right: 90px;
+        top: 90px;
+        z-index: 5;
+        width: 60px;
+        transform: translate3d(-80px, 0, 45px) perspective(100px);
+        // transform: translateX(-80px)  perspective(100px);
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 400ms 1200ms ease, opacity 400ms 1200ms ease;
+      }
+      .img-layer {
+        position: absolute;
+        display: block;
+        left: 0px;
+        bottom: 0px;
+        z-index: 5;
+        width: 100%;
+        // transform: translate3d(0, 0, 45px) perspective(100px);
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity 2000ms 1200ms ease;
+        // transition-delay: 4s;
+      }
+      .img-next {
+        position: absolute;
+        display: block;
+        right: 0px;
+        bottom: 0px;
+        z-index: 5;
+        width: 20%;
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 400ms 1300ms ease, opacity 200ms 1300ms ease;
+        transition-delay: 1s;
+        transform-origin: 100% 100%;
+      }
+      .img-shine {
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity 6000ms 1200ms ease;
+      }
+    }
+  }
+
+  .card-front .info-card--content-data {
+    transform: scale3d(1, 1, 1);
+    pointer-events: auto;
+    transition: transform 2000ms 1300ms ease, opacity 3000ms 1200ms ease;
+  }
+
+  .info-card-checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+
+    .img-cruz {
+      opacity: 0;
+      transform: translate3d(0px, -100px, 55px) perspective(100px) scale(0);
+      pointer-events: none;
+      transition: transform 700ms ease, opacity 200ms 150ms ease;
+    }
+    .img-decoration-left {
+      opacity: 0;
+      transform: translate3d(-50px, 25px, 45px) perspective(100px);
+      pointer-events: none;
+      transition: transform 400ms ease, opacity 200ms 150ms ease;
+    }
+
+    .img-decoration-right {
+      opacity: 0;
+      transform: translate3d(50px, 25px, 45px) perspective(100px);
+      pointer-events: none;
+      transition: transform 400ms ease, opacity 200ms 150ms ease;
+    }
+    .img-layer {
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 400ms ease, opacity 200ms 150ms ease;
+    }
+    .img-next {
+      opacity: 0;
+      transform: scale(3);
+      pointer-events: none;
+      transition: transform 400ms ease, opacity 200ms 150ms ease;
+    }
+    .img-shine {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 200ms 150ms ease;
+    }
+    .card-front .info-card--content-data {
+      opacity: 0;
+      transform: scale3d(0.5,0.5, 1);
+      pointer-events: none;
+      transition: transform 400ms ease, opacity 200ms 150ms ease;
+    }
+
+    .img-left-branch1,
+    .img-left-branch2,
+    .img-right-branch1,
+    .img-right-branch2 {
+      opacity: 0;
+      transform: translate3d(0, 0, 25px) perspective(100px) scale(0.4);
+      pointer-events: none;
+      transition: transform 400ms ease, opacity 200ms 150ms ease;
+    }
+
+    .img-cocktail-gifts {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(0, 0, 35px) perspective(100px) scale(1);
+      transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
+    }
+    .img-roller {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(0, 0, 35px) perspective(100px) scale(1);
+      transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
+    }
+    .img-ring--bottom-one {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(-160px, 65px, 35px) perspective(100px);
+      transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
+      transition-delay: 1.5s;
+    }
+    .img-ring--bottom-two {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(-20px, 150px, 35px) perspective(100px);
+      transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
+      transition-delay: 1s;
+    }
+    .img-ring--bottom-three {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(-100px, 95px, 35px) perspective(100px);
+      transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
+    }
+    .img-ring--top-one {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(80px, -50px, 35px) perspective(100px);
+      transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
+      transition-delay: 1.5s;
+    }
+    .img-ring--top-two {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(80px, -50px, 35px) perspective(100px);
+      transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
+      transition-delay: 1s;
+    }
+    .img-ring--top-three {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(45px, -70px, 35px) perspective(100px);
+      transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
+    }
+  }
+
+  .info-card--content-data {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    margin-bottom: 50px;
+  }
+  .info-card--content-data,
+  .img-center,
+  .img-cruz,
+  .img-notes {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .card-back .img-wrap {
+    &.img-notes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      img {
+        width: auto;
+      }
+    }
+
+    .img-note--one {
+      position: absolute;
+      -webkit-animation: moveX 5s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+      -moz-animation: moveX 5s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+      -o-animation: moveX 5s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+      animation: moveX 5s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+    }
+
+    .img-note--two {
+      position: absolute;
+      -webkit-animation: moveX 6.05s linear 0s infinite alternate, moveY 6.4s linear 2s infinite alternate;
+      -moz-animation: moveX 6.05s linear 0s infinite alternate, moveY 6.4s linear 2s infinite alternate;
+      -o-animation: moveX 6.05s linear 0s infinite alternate, moveY 6.4s linear 2s infinite alternate;
+      animation: moveX 6.05s linear 0s infinite alternate, moveY 6.4s linear 2s infinite alternate;
+    }
+      
+    .img-note--three {
+      position: absolute;
+      -webkit-animation: moveX-revert 6.05s linear 2s infinite alternate, moveY-revert 4.4s linear 1s infinite alternate;
+      -moz-animation: moveX-revert 6.05s linear 2s infinite alternate, moveY-revert 4.4s linear 1s infinite alternate;
+      -o-animation: moveX-revert 6.05s linear 2s infinite alternate, moveY-revert 4.4s linear 1s infinite alternate;
+      animation: moveX-revert 6.05s linear 2s infinite alternate, moveY-revert 4.4s linear 1s infinite alternate;
+    }
+      
+    .img-note--four {
+      position: absolute;
+      -webkit-animation: moveX-revert 7s linear 0s infinite alternate, moveY-revert 6.4s linear 0s infinite alternate;
+      -moz-animation: moveX-revert 7s linear 0s infinite alternate, moveY-revert 6.4s linear 0s infinite alternate;
+      -o-animation: moveX-revert 7s linear 0s infinite alternate, moveY-revert 6.4s linear 0s infinite alternate;
+      animation: moveX-revert 7s linear 0s infinite alternate, moveY-revert 6.4s linear 0s infinite alternate;
+    }
+
+    &.img-rings {
+      .img-ring {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: auto;
+      }
+      .img-ring--bottom-one {
+        transform: translate3d(-100%, 100%, 35px) perspective(100px);
+        transition: transform 400ms 100ms ease, opacity 200ms 250ms ease;
+        opacity: 0;
+      }
+      .img-ring--bottom-two {
+        // transform: translate3d(-20px, 150px, 35px) perspective(100px);
+        transform: translate3d(-100%, 100%, 35px) perspective(100px);
+        opacity: 0;
+        transition: transform 400ms 100ms ease, opacity 200ms 250ms ease;
+      }
+      .img-ring--bottom-three {
+        // transform: translate3d(-100px, 95px, 35px) perspective(100px);
+        transform: translate3d(-100%, 100%, 35px) perspective(100px);
+        opacity: 0;
+        transition: transform 400ms 100ms ease, opacity 200ms 250ms ease;
+      }
+      .img-ring-top {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+      }
+      .img-ring--top-one {
+        transform: translate3d(100%, -100%, 35px) perspective(100px);
+        opacity: 0;
+        transition: transform 400ms 100ms ease, opacity 200ms 250ms ease;
+      }
+      .img-ring--top-two {
+        transform: translate3d(100%, -100%, 35px) perspective(100px);
+        opacity: 0;
+        transition: transform 400ms 100ms ease, opacity 200ms 250ms ease;
+      }
+      .img-ring--top-three {
+        transform: translate3d(100%, -100%, 35px) perspective(100px);
+        opacity: 0;
+        transition: transform 400ms 100ms ease, opacity 200ms 250ms ease;
+      }
+    }
+
+  }
+
+  .link {
+    background-color: white;
+    border-color: #0d6efd;
+    color: #0d6efd;
+    &:hover {
+      border-color: $white;
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  }
+
+  .img-cocktail-bg {
+    overflow: hidden;
+    background-image: url("/public/assets/img/cocktail/card/background_1.png");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .img-roller {
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 175px);
+    transform: translate3d(0, 0, 35px) perspective(100px) scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 400ms 100ms ease, opacity 200ms 250ms ease;
+    img {
+      width: 350px;
+    }
+  }
+}
+
+.is-checked .card-back .info-card--content-data {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  pointer-events: auto;
+  transition: transform 2000ms 1300ms ease, opacity 3000ms 1200ms ease;
+}
+
+.card-back .info-card--content-data {
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 1);
+  pointer-events: none;
+  transition: transform 400ms ease, opacity 200ms 150ms ease;
+}

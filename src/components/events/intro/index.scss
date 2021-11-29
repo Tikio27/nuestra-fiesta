@@ -22,6 +22,9 @@
 .intro-content {
   width: 100vw;
   @include media-breakpoint-up(lg) {
+    .intro-text {
+      font-size: 60px;  
+    }
     font-size: 72px;
   }
 }

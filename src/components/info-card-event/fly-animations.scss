@@ -1,0 +1,113 @@
+@keyframes cloud-anim {
+  0% {
+    // -webkit-transition: none;
+    // -moz-transition: none;
+    // -ms-transition: none;
+    // -o-transition: none;
+    // transition: none;
+    left: 100%;
+    transform: translateX(0) translateY(0);
+  }
+  20% {
+    transform: translateX(10%) translateY(40px);
+  }
+  40% {
+    transform: translateX(20%) translateY(80px);
+  }
+  60% {
+     transform: translateX(30%) translateY(120px);
+  }
+  80% {
+     transform: translateX(40%) translateY(160px);
+  }
+  100% {
+    left: -50%;
+    transform: translateX(50%) translateY(200px);
+  }
+}
+@keyframes cloud-anim-2 {
+  0% {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+    left: 0%
+  }
+  50% {
+    left: -100%;
+  }
+  50.0001% {
+    left: 100%;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+  100% {
+    left: 0%
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(-50%) translateY(calc(-50%))
+  }
+  50%{
+    transform: translateX(-50%) translateY(calc(-50% - 6px))
+  }
+  100% {
+    transform: translateX(-50%) translateY(calc(-50%))
+  }
+}
+
+@-webkit-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@-moz-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@-o-keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@keyframes moveX {
+  from { left: 0; } to { left: 480px; }
+}
+@-webkit-keyframes moveY {
+  from { top: 0; } to { top: calc(100% - 21px); }
+}
+@-moz-keyframes moveY {
+  from { top: 0; } to { top: calc(100% - 21px); }
+}
+@-o-keyframes moveY {
+  from { top: 0; } to { top: calc(100% - 21px); }
+}
+@keyframes moveY {
+  from { top: 0; } to { top: 99%; }
+}
+
+@-webkit-keyframes moveX-revert {
+  from { left: 480px; } to { left: 0; }
+}
+@-moz-keyframes moveX-revert {
+  from { left: 480px; } to { left: 0; }
+}
+@-o-keyframes moveX-revert {
+  from { left: 480px; } to { left: 0; }
+}
+@keyframes moveX-revert {
+  from { left: 480px; } to { left: 0; }
+}
+@-webkit-keyframes moveY-revert {
+  from { top: calc(100% - 21px); } to { top: 0; }
+}
+@-moz-keyframes moveY-revert {
+  from { top: calc(100% - 21px); } to { top: 0; }
+}
+@-o-keyframes moveY-revert {
+  from { top: calc(100% - 21px); } to { top: 0; }
+}
+@keyframes moveY-revert {
+  from { top: calc(100% - 21px); } to { top: 0; }
+}

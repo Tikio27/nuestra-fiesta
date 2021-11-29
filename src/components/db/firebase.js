@@ -1,6 +1,6 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from 'firebase/app';
-import { getFirestore, doc, getDoc } from 'firebase/firestore/lite';
+import { getFirestore } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBi7V9swVRvIt27CmGQoXTVlNBCMmakOmo",

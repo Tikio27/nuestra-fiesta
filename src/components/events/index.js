@@ -9,13 +9,15 @@ import Plx from 'react-plx';
 import { Parallax as ScrollParallax } from "react-scroll-parallax";
 import parallaxData from '../../styles/parallax.json';
 import CountdownCards from '../countdown-cards';
-import InfoCard from '../info-card';
+// import InfoCard from '../info-card';
 import Sparkles from '../utils/sparkle';
 import RsvpCard from './rsvp-card';
 import { Intro } from './intro';
 import { useMediaQuery } from 'react-responsive'
 import Quotes from './quotes';
 import QuoteMobile from './quoteMobile';
+import Parents from './parents';
+import InfoCardEvent from '../info-card-event';
 
 function Events() {
   const { id, guest } = useParams();
@@ -57,6 +59,21 @@ function Events() {
     query: '(min-width: 992px)'
   })
 
+
+  const headingParalaxData = [
+    {
+      start: "self",
+      end: "100vh",
+      properties: [
+        {
+          startValue: "block",
+          endValue: "none",
+          property: "display"
+        }
+      ]
+    }
+  ];
+  
   return (
     <div className="main">
       {eventData && (
@@ -89,9 +106,9 @@ function Events() {
           {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
 
           <section className="event__celebrant">
-            <Parallax strength={500} bgImage="/assets/img/bg/moon_1@3x.png" className="event__celebrant-bg">
+            <Parallax strength={500} bgImage="/assets/img/bg/zodiac.jpg" className="event__celebrant-bg">
               <Plx parallaxData={ parallaxData.opacity }>
-                <div className="mx-auto text-center">
+                <div className="mx-auto text-center ">
                   <StickyText
                     name={eventData.celebrantName}
                     text={eventData.quotes.stickyText}
@@ -107,7 +124,7 @@ function Events() {
             <Quotes firstQuote={eventData.quotes.firstQuote} secondQuote={eventData.quotes.secondQuote} />
           )}
           {!isDesktopOrLaptop && (
-            <Parallax blur={5} strength={500} bgImage="/assets/img/sky4.png">
+            <Parallax blur={5} strength={500} bgImage="/assets/img/bg/horoscope2.webp">
             <>
               <QuoteMobile quote={eventData.quotes.firstQuote} imgUrl="/assets/img/foto3.jpg" />
               <QuoteMobile quote={eventData.quotes.secondQuote} imgUrl="/assets/img/foto4.jpg" />
@@ -117,65 +134,42 @@ function Events() {
 
           <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
 
-          <section className="event__parents">
+          {/* <section className="event__parents">
             <Parallax strength={500} bgImage="/assets/img/bendicion3.jpg">
               <div className="event__parents-overlay">
                 <img src="/assets/img/frames/shine.png"/>
               </div>
               <div className="event__parents-root">
-                  <div className="event__parents-container">
-                      <ScrollParallax
-                          y={[-50, 10]}
-                          x={[-50, 10]}
-                          slowerScrollRate
-                          className="event__parents-parallax"
-                      >
-                            <div className="event__parents-content text-center">
-                              <p className="secondary-font text-shadow_border text-white type-bold-36">Con la bendicion de Dios y de mis Padres</p>
-                        <p className="primary-font text-shadow_border text-white type-bold-48">{eventData.parents.father}</p>
-                        <p className="primary-font text-shadow_border text-white type-bold-48">{eventData.parents.mother}</p>
-                            </div>
-                      </ScrollParallax>
-                      <ScrollParallax
-                          y={[-100, -200]}
-                          x={[20, -20]}
-                          slowerScrollRate
-                          className="event__godparents"
-                      >
-                          <div className="event__parents-content text-center text-white">
-                        <p className="secondary-font text-shadow_border type-bold-36">Y la compañia de mis padrinos</p>
-                        <p className="primary-font text-shadow_border type-bold-48">Jesus Esparza</p>
-                        <p className="primary-font text-shadow_border type-bold-48">Emma Sandoval</p>
-                          </div>
-                      </ScrollParallax>
-                  </div>
+                 
               </div>
             </Parallax>
-          </section>
+          </section> */}
+          <Parents parents={eventData.parents} godparents={eventData.godparents}/>
 
           {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
 
           <section className="event__presentation">
-            <Parallax
+            {/* <Parallax
                 strength={500}
-                bgImage="/assets/img/bg/bg-sky.png"
-            >
-              <Plx parallaxData={ parallaxData.opacity }>
+              bgImage="/assets/img/bg/zodiac2.gif" className="event__background"
+            > */}
+              <img src="/assets/img/bg/zodiac3.gif" className="event__presentation-bg"/>
+              <Plx parallaxData={ parallaxData.presentation }>
                 <div className="event__presentation-container">
 
                   <div className="event__presentation-content">
-                    <div className="text-center p-5 event__presentation-text">
-                        <p className="secondary-font pb-4 type-bold-18 text-shine">Estamos muy felices! y queremos compartirlo con todos ustedes, preparando una fiesta muy especial con gente linda, momentos emotivos, risas y muchas sorpresas más…</p>
+                  <div className="text-center p-4 event__presentation-text text-shadow_border">
+                        <p className="secondary-font pb-4 type-bold-18 ">Estamos muy felices! y queremos compartirlo con todos ustedes, preparando una fiesta muy especial con gente linda, momentos emotivos, risas y muchas sorpresas más…</p>
                       <div className="divider "><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
-                        <p className="primary-font type-bold-48 pt-4 text-shine">¡Mis XV Años!</p>
-                        <p className="primary-font type-bold-24 text-shine">Sabado, 12 de Febrero 2022</p>
+                        <p className="primary-font type-bold-48 pt-4 ">¡Mis XV Años!</p>
+                        <p className="primary-font type-bold-24">Sabado, 12 de Febrero 2022</p>
                     </div>
                   </div>
                   <p className="primary-font type-bold-24 pt-4 text-center text-white">Faltan para vernos</p>
                   <CountdownCards date={eventData.date} time={eventData.time} ampm={eventData.ampm} />
                 </div>
               </Plx>
-            </Parallax>
+            {/* </Parallax> */}
           </section>
 
           <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
@@ -197,7 +191,7 @@ function Events() {
               <p className="primary-font type-bold-48 pt-4">Acompañame</p>
               <p className="secondary-font type-normal-24 pt-4">Los momentos más importantes de la vida se convierten en inolvidables cuando los compartes con quienes más amas.</p>
               <div className="row">
-                <InfoCard ceremony={eventData.locations['ceremony']} cocktail={eventData.locations['cocktail']}/>
+                <InfoCardEvent ceremony={eventData.locations['ceremony']} cocktail={eventData.locations['cocktail']}/>
               </div>
             </div>
           </section>
@@ -215,8 +209,8 @@ function Events() {
             <div className="dividermask"></div>
             <span><img src='/favicon.ico' /></span>
           </div>
-          <section className="event__section-layout">
-            <Parallax strength="200" bgImage="/assets/img/rsvp/rsvp@2x.png" className="event__background">
+          <section className="event__section-rsvp">
+            <Parallax strength="500" bgImage="/assets/img/bg/horoscope.webp" className="event__background">
               <Plx parallaxData={parallaxData.rsvp}>
                 <RsvpCard guestId={guest} eventId={eventId} eventData={eventData} />
               </Plx>
