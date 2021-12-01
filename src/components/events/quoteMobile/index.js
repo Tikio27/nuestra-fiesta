@@ -29,39 +29,6 @@ const heroData = [
   }
 ];
 
-const contentDataA = [
-  {
-    start: "self",
-    startOffset: "100vh",
-    duration: "80vh",
-    properties: [
-      {
-        startValue: 0,
-        endValue: 45,
-        unit: "vh",
-        property: "translateY"
-      }
-    ]
-  }
-];
-
-
-const contentDataB = [
-  {
-    start: "self",
-    startOffset: "100vh",
-    duration: "30vh",
-    properties: [
-      {
-        startValue: 0,
-        endValue: 0,
-        unit: "vh",
-        property: "translateY"
-      }
-    ]
-  }
-];
-
 function QuoteMobile({quote, imgUrl }) {
   return (
     <section className="event__quotes text-white text-center mb-5">

@@ -18,6 +18,7 @@ import Quotes from './quotes';
 import QuoteMobile from './quoteMobile';
 import Parents from './parents';
 import InfoCardEvent from '../info-card-event';
+import GiftSection from './giftSection';
 
 function Events() {
   const { id, guest } = useParams();
@@ -59,21 +60,6 @@ function Events() {
     query: '(min-width: 992px)'
   })
 
-
-  const headingParalaxData = [
-    {
-      start: "self",
-      end: "100vh",
-      properties: [
-        {
-          startValue: "block",
-          endValue: "none",
-          property: "display"
-        }
-      ]
-    }
-  ];
-  
   return (
     <div className="main">
       {eventData && (
@@ -187,9 +173,9 @@ function Events() {
           {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
 
           <section className="event__locations event__section-layout">
-            <div className="container text-center">
-              <p className="primary-font type-bold-48 pt-4">Acompañame</p>
-              <p className="secondary-font type-normal-24 pt-4">Los momentos más importantes de la vida se convierten en inolvidables cuando los compartes con quienes más amas.</p>
+            <div className="container text-center py-4">
+              <p className="primary-font type-bold-48">Acompañame</p>
+              <p className="secondary-font type-normal-24">Los momentos más importantes de la vida se convierten en inolvidables cuando los compartes con quienes más amas.</p>
               <div className="row">
                 <InfoCardEvent ceremony={eventData.locations['ceremony']} cocktail={eventData.locations['cocktail']}/>
               </div>
@@ -226,7 +212,10 @@ function Events() {
               </div>
             </div>
           </section>
-          <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
+          <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico' /></span></div>
+          <section className="event-gift-section">
+            <GiftSection config={eventData.properties.giftTable}/>
+          </section>
           <Parallax strength={300}>
             <Background className="custom-bg">
                 <img src="/assets/img/foto6.jpg" alt="fill murray" strength={500}/>
