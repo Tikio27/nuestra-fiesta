@@ -13,12 +13,15 @@ import CountdownCards from '../countdown-cards';
 import Sparkles from '../utils/sparkle';
 import RsvpCard from './rsvp-card';
 import { Intro } from './intro';
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 import Quotes from './quotes';
 import QuoteMobile from './quoteMobile';
 import Parents from './parents';
 import InfoCardEvent from '../info-card-event';
 import GiftSection from './giftSection';
+import GiftOptions from '../gift-options';
+import Thanks from '../thanks-section';
+import Gallery from '../gallery';
 
 function Events() {
   const { id, guest } = useParams();
@@ -26,6 +29,7 @@ function Events() {
   const [eventId, setEventId] = useState();
   const [paramId, setParamId ] = useState();
   const [error, setError] = useState(false);
+  let heroImg = '';
 
   useEffect(() => {
     if (id) {
@@ -53,12 +57,20 @@ function Events() {
 
   if (eventData) {
     console.log(`Event Data: ${JSON.stringify(eventData)}`);
+  } else {
+    setEventData(JSON.parse(`{"eventType":"XV Años","name":"camila-misxvs","eventTitle":"Mis XV's","properties":{"dressCode":"Formal","giftTable":{"description":"Mi mejor regalo es compartir contigo este gran día, Sin embargo si deseas obsequiarme algo, puedo sugerir las siguientes opciones.","title":"Mesa de Regalos","options":[{"store":"Amazon","url":"http://amazon.com.mx","code":"123456"},{"store":"Liverpool","code":"654321","url":"http://liverpool.com.mx"}]},"staySafe":"Debes portar el cubrebocas todo el tiempo posible. Sabemos que estás feliz por mi, pero evita abrazarme. ¡Cuidemos a la quinceañera! Permite que el personal revise tu temperatura a la entrada. Lava tus manos antes y después de comer o cada vez que te levantes de tu mesa. Si sientes algún síntoma previo al evento háznoslo saber, nosotros comprenderemos tu ausencia.","hashtag":"#misXVCami"},"quotes":{"stickyText":"La vida es maravillosa a cualquier edad, pero los quince... ","stickyTextLabel":"Son imposibles de olvidar","section1":"La vida es maravillosa a cualquier edad, pero los quince... ","firstQuote":"Quince años es pasar de la niñez a la adolescencia, entrar a un mundo desconocido y nuevo, continuar sintiéndose querida y acompañada, celebrar lo vivido hasta aquí, comenzar una nueva etapa.","secondQuote":"La luna se encuentra en tu sonrisa y el sol en tu mirada.","section2":"Los momentos más importantes de la vida se convierten en inolvidables cuando los compartes con quienes más amas."},"godParents":[{"godMother":"Madrina","godFather":"Padrino","role":"XV Años"},{"role":"XV Años","godMother":"Madrina","godFather":"Padrino"}],"ampm":"pm","date":"02-12-2022","time":"06:00","owner":{"phone":3338454848,"email":"jerp27@gmail.com","addess":"Fresno 30","name":"J Eutiquio"},"godparents":{"godMother":"Emma Sandoval","godFather":"Jesus Esparza"},"urlPath":"cami-20120212","celebrantName":"Camila Guadalupe Rodríguez González","type":"basic, premium, golden","eventSubtitle":"Bienvenidos al inicio de mi cuento de hadas.","parents":{"father":"J. Eutiquio Rodriguez Parra","mother":"Sandra Celina González Monroy"},"guests":[{"email":"jerp27@gmail.com","phone":3338454848,"id":"famrodgon","name":"Eutiquio","userGuest":{},"admissions":3,"hasConfirmed":false}],"locations":{"ceremony":{"address":"C. Puerto Yavaros, Miramar, 45060 Zapopan, Jal.","location":"Emporio Salon de Eventos","link":"https://www.google.com/maps/place/Emporio+Sal%C3%B3n+De+Eventos/@20.6366954,-103.4412077,15z/data=!4m5!3m4!1s0x0:0x815816c0861e99f!8m2!3d20.6366918!4d-103.4411821","title":"Ceremonia Religiosa","time":"06:00 PM"},"cocktail":{"location":"Emporio Salon de Eventos","title":"Recepción","time":"07:00 PM","address":"C. Puerto Yavaros, Miramar, 45060 Zapopan, Jal.","link":"https://www.google.com/maps/place/Emporio+Sal%C3%B3n+De+Eventos/@20.6366954,-103.4412077,15z/data=!4m5!3m4!1s0x0:0x815816c0861e99f!8m2!3d20.6366918!4d-103.4411821"}}}`));
   }
 
   console.log(window.innerWidth);
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 992px)'
   })
+
+  if (isDesktopOrLaptop) {
+    heroImg = '/assets/img/celebrant/hero.jpg';
+  } else {
+    heroImg = '/assets/img/celebrant/hero.jpg';
+  }
 
   return (
     <div className="main">
@@ -67,32 +79,19 @@ function Events() {
           <section className="event__intro">
             <Intro title={eventData.eventTitle} subtitle={eventData.eventSubtitle} />
           </section>
+          <div className='pt-1' />
           <section className="event__hero">
-            <Parallax bgImage="/assets/img/hero.jpg" strength={300} className="event__background">
+            <Parallax bgImage={heroImg} strength={500} className="event__background">
               <span className="gradient-overlay"></span>
-                {/* <div className="event__title-header event__section-view"> */}
               <Sparkles style={{width: "100%", height: "200vh"}}>
-                  {/* <div className="event__title-header-view"> */}
-                    {/* <Plx
-                      parallaxData={ parallaxData.heroText }
-                    >
-                      <div className="mx-auto text-center text-shine">
-                        <span className="event__hero-title primary-font text-shadow_border type-bold-72">{eventData.eventTitle}</span>
-                          <span className="event__hero-subtitle secondary-font text-shadow_border type-normal-36">
-                        {eventData.eventSubtitle}
-                        </span>
-                      </div>
-                    </Plx> */}
-                  {/* </div> */}
               </Sparkles>
-              {/* </div> */}
             </Parallax>
           </section>
-
+          <div className='pt-1' />
           {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
 
           <section className="event__celebrant">
-            <Parallax strength={500} bgImage="/assets/img/bg/zodiac.jpg" className="event__celebrant-bg">
+            <Parallax strength={600} bgImage="/assets/img/bg/zodiac.jpg" className="event__celebrant-bg">
               <Plx parallaxData={ parallaxData.opacity }>
                 <div className="mx-auto text-center ">
                   <StickyText
@@ -104,7 +103,7 @@ function Events() {
               </Plx>
             </Parallax>
           </section>
-
+          <div className='pt-1' />
           {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
           {isDesktopOrLaptop && (
             <Quotes firstQuote={eventData.quotes.firstQuote} secondQuote={eventData.quotes.secondQuote} />
@@ -112,60 +111,44 @@ function Events() {
           {!isDesktopOrLaptop && (
             <Parallax blur={5} strength={500} bgImage="/assets/img/bg/horoscope2.webp">
             <>
-              <QuoteMobile quote={eventData.quotes.firstQuote} imgUrl="/assets/img/foto3.jpg" />
-              <QuoteMobile quote={eventData.quotes.secondQuote} imgUrl="/assets/img/foto4.jpg" />
+              <QuoteMobile quote={eventData.quotes.firstQuote} imgUrl="/assets/img/celebrant/quote1.jpg" />
+              <QuoteMobile quote={eventData.quotes.secondQuote} imgUrl="/assets/img/celebrant/quote2.jpg" />
             </>
             </Parallax>
           )}
 
-          <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
-
-          {/* <section className="event__parents">
-            <Parallax strength={500} bgImage="/assets/img/bendicion3.jpg">
-              <div className="event__parents-overlay">
-                <img src="/assets/img/frames/shine.png"/>
-              </div>
-              <div className="event__parents-root">
-                 
-              </div>
-            </Parallax>
-          </section> */}
+          {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico' /></span></div> */}
+          <div className='pt-1' />
           <Parents parents={eventData.parents} godparents={eventData.godparents}/>
 
           {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
-
+          
+          <div className='pt-1' />
           <section className="event__presentation">
-            {/* <Parallax
-                strength={500}
-              bgImage="/assets/img/bg/zodiac2.gif" className="event__background"
-            > */}
-              <img src="/assets/img/bg/zodiac3.gif" className="event__presentation-bg"/>
-              <Plx parallaxData={ parallaxData.presentation }>
-                <div className="event__presentation-container">
+            <img src="/assets/img/bg/zodiac3.gif" className="event__presentation-bg"/>
+            <Plx parallaxData={ parallaxData.presentation }>
+              <div className="event__presentation-container">
 
-                  <div className="event__presentation-content">
-                  <div className="text-center p-4 event__presentation-text text-shadow_border">
-                        <p className="secondary-font pb-4 type-bold-18 ">Estamos muy felices! y queremos compartirlo con todos ustedes, preparando una fiesta muy especial con gente linda, momentos emotivos, risas y muchas sorpresas más…</p>
-                      <div className="divider "><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
-                        <p className="primary-font type-bold-48 pt-4 ">¡Mis XV Años!</p>
-                        <p className="primary-font type-bold-24">Sabado, 12 de Febrero 2022</p>
-                    </div>
+                <div className="event__presentation-content">
+                <div className="text-center p-4 event__presentation-text text-shadow_border">
+                      <p className="secondary-font pb-4 type-bold-18 ">Estamos muy felices! y queremos compartirlo con todos ustedes, preparando una fiesta muy especial con gente linda, momentos emotivos, risas y muchas sorpresas más…</p>
+                    <div className="divider "><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
+                      <p className="primary-font type-bold-48 pt-4 ">¡Mis XV Años!</p>
+                      <p className="primary-font type-bold-24">Sabado, 12 de Febrero 2022</p>
                   </div>
-                  <p className="primary-font type-bold-24 pt-4 text-center text-white">Faltan para vernos</p>
-                  <CountdownCards date={eventData.date} time={eventData.time} ampm={eventData.ampm} />
                 </div>
-              </Plx>
-            {/* </Parallax> */}
+                <p className="primary-font type-bold-24 pt-4 text-center text-white">Faltan para vernos</p>
+                <CountdownCards date={eventData.date} time={eventData.time} ampm={eventData.ampm} />
+              </div>
+            </Plx>
           </section>
 
-          <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
+          {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
 
           <section className="event__bg-section">
-            <div className="event__bg">
+            <div className="event__bg event__bg--1">
               <div className="event__gb--overlay">
-                <div className="event__gb--overlay-color">
-                  {/* <div className="" /> */}
-                </div>
+                <div className="event__gb--overlay-color" />
               </div>
             </div>
           </section>
@@ -173,28 +156,29 @@ function Events() {
           {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
 
           <section className="event__locations event__section-layout">
-            <div className="container text-center py-4">
-              <p className="primary-font type-bold-48">Acompañame</p>
-              <p className="secondary-font type-normal-24">Los momentos más importantes de la vida se convierten en inolvidables cuando los compartes con quienes más amas.</p>
-              <div className="row">
-                <InfoCardEvent ceremony={eventData.locations['ceremony']} cocktail={eventData.locations['cocktail']}/>
+            <div className="text-center py-4">
+              <div className="container">
+                <p className="primary-font type-bold-48">Acompañame</p>
+                <p className="secondary-font type-normal-24">Los momentos más importantes de la vida se convierten en inolvidables cuando los compartes con quienes más amas.</p>
               </div>
+              <InfoCardEvent ceremony={eventData.locations['ceremony']} cocktail={eventData.locations['cocktail']}/>
             </div>
           </section>
 
           <section className="event__bg-section">
-            <div className="event__bg">
+            <div className="event__bg event__bg--2">
               <div className="event__gb--overlay">
-                <div className="event__gb--overlay-color">
-                  {/* <div className="" /> */}
-                </div>
+                <div className="event__gb--overlay-color" />
               </div>
             </div>
           </section>
-          <div className="divider">
+          {/* <div className="divider">
             <div className="dividermask"></div>
             <span><img src='/favicon.ico' /></span>
-          </div>
+          </div> */}
+          <section className="event-gift-section">
+            <GiftOptions config={eventData.properties.giftTable} />
+          </section>
           <section className="event__section-rsvp">
             <Parallax strength="500" bgImage="/assets/img/bg/horoscope.webp" className="event__background">
               <Plx parallaxData={parallaxData.rsvp}>
@@ -208,22 +192,20 @@ function Events() {
               <div className="p-4 text-center">
                 <p className="type-normal-36 primary-font">Codigo de Vestimenta</p>
                 <p className="type-normal-36 primary-font">Formal</p>
-                <img src="/assets/img/dresscode.png" className="dress-code-img"/>
+                <img src="/assets/img/dresscode.png" className="dress-code-img" />
               </div>
             </div>
           </section>
           <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico' /></span></div>
-          <section className="event-gift-section">
-            <GiftSection config={eventData.properties.giftTable}/>
-          </section>
-          <Parallax strength={300}>
-            <Background className="custom-bg">
-                <img src="/assets/img/foto6.jpg" alt="fill murray" strength={500}/>
-            </Background>
+          <Parallax strength={-300} className="custom-bg" bgImage="/assets/img/celebrant/footer_bg.jpg">
             <div className="event_min-height"></div>
           </Parallax>
-            <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico' /></span></div>
-            <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico' /></span></div>
+          <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico' /></span></div>
+          <Gallery />
+          {/* <Thanks /> */}
+          <div className="footer-bottom">
+            Powered by @tikio27
+          </div>
         </>
       )}
 

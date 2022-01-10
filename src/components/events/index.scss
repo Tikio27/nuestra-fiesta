@@ -2,7 +2,7 @@
 
 .event__section-layout {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   text-align: center;
   overflow: hidden;
 }
@@ -27,13 +27,16 @@
     background-size: cover;
     object-fit: cover;
     height: 200vh !important;
-    width: 100vw !important;
+    width: 100% !important;
   }
 }
 
 .event__hero {
   height: 200vh;
   width: 100%;
+  .event__background img {
+    object-position: 35% 0;
+  }
 }
 
 .event__title-header {
@@ -314,17 +317,26 @@
   // }
 }
 
-.event__bg {
+.event__bg{
   background-image: url('../../../public/assets/img/foto6.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
+  background-size: cover;
+  &.event__bg--1 {
+    background-image: url('../../../public/assets/img/celebrant/bg1.jpg');
+    background-position: top;
+  }
+  &.event__bg--2 {
+    background-image: url('../../../public/assets/img/celebrant/bg2.jpg');
+    background-position: center center;
+  }
 }
 
 .event__gb--overlay {
   position: relative;
   width: 100%;
-  min-height: 400px;
+  min-height: 60vh;
 }
 .event__gb--overlay-color {
   position: absolute;
@@ -333,13 +345,14 @@
   bottom: 0;
   width: 100%;
   z-index: 1;
-  opacity: 0.5;
+  opacity: 0;
   background-color: #ffffff;
   min-height: 300px;
 }
 
 .event__locations {
   height: auto;
+  min-height: 100vh;
 }
 
 .dress-code-img {
@@ -376,8 +389,10 @@
   object-fit: cover;
 }
 
-.event-gift-section {
-  position: relative;
-  width: 100vw;
-  height: 650vh;
+.footer-bottom{
+	width: 100%;
+	padding: 25px 0;
+	text-align: center;
+	color: #fff;
+	background: rgb(9, 95, 234);
 }

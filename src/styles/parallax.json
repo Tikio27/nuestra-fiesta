@@ -41,7 +41,8 @@
       }
     ]
   }],
-  "rsvp": [{
+  "rsvp": [
+    {
     "start": "self",
     "duration": "80vh",
     "properties": [
@@ -57,56 +58,60 @@
         "property": "translateY"
       }
     ]
-  },
-  {
-    "start": "self",
-    "startOffset": "80vh",
-    "duration": "150vh",
-    "properties": [
-      {
-        "startValue": 20,
-        "endValue": 120,
-        "unit": "vh",
-        "property": "translateY"
-      }
-    ]
-  }],
- "parents": [{
-    "start": "self",
-    "duration": "80vh",
-    "properties": [
-      {
-        "startValue": 0,
-        "endValue": 1,
-        "property": "opacity"
-      },
-      {
-        "startValue": 100,
-        "endValue": 0,
-        "unit": "%",
-        "property": "translateY"
-      },
-      {
-        "startValue": 0,
-        "endValue": 1,
-        "property": "scale"
-      }
-    ]
-  },
-  {
-    "start": "self",
-    "startOffset": "80vh",
-    "duration": "20vh",
-    "properties": [
-      {
-        "startValue": 0,
-        "endValue": 50,
-        "unit": "%",
-        "property": "translateY"
-      }
-    ]
-  }],
-  "presentation": [{
+    },
+    {
+      "start": "self",
+      "startOffset": "80vh",
+      "duration": "150vh",
+      "properties": [
+        {
+          "startValue": 20,
+          "endValue": 120,
+          "unit": "vh",
+          "property": "translateY"
+        }
+      ]
+    }
+  ],
+ "parents": [
+    {
+      "start": "self",
+      "duration": "80vh",
+      "properties": [
+        {
+          "startValue": 0,
+          "endValue": 1,
+          "property": "opacity"
+        },
+        {
+          "startValue": 100,
+          "endValue": 0,
+          "unit": "%",
+          "property": "translateY"
+        },
+        {
+          "startValue": 0,
+          "endValue": 1,
+          "property": "scale"
+        }
+      ]
+    },
+    {
+      "start": "self",
+      "startOffset": "80vh",
+      "duration": "20vh",
+      "properties": [
+        {
+          "startValue": 0,
+          "endValue": 50,
+          "unit": "%",
+          "property": "translateY"
+        }
+      ]
+    }
+  ],
+  "presentation": [
+    {
     "start": "self",
     "duration": "90vh",
     "properties": [
@@ -127,18 +132,88 @@
         "property": "scale"
       }
     ]
-  },
-  {
-    "start": "self",
-    "startOffset": "90vh",
-    "duration": "50vh",
-    "properties": [
+    },
+    {
+      "start": "self",
+      "startOffset": "90vh",
+      "duration": "100vh",
+      "properties": [
+        {
+          "startValue": 0,
+          "endValue": 100,
+          "unit": "vh",
+          "property": "translateY"
+        }
+      ]
+    }
+],
+  "giftSection": [
+    {
+      "start": ".gift-options",
+      "startOffset": "150vh",
+      "duration": "100vh",
+      "properties": [
       {
         "startValue": 0,
-        "endValue": 20,
+        "endValue": -100,
         "unit": "%",
-        "property": "translateY"
+        "property": "translateX"
       }
-    ]
-  }]
+      ]
+    },
+    {
+      "start": ".gift-options",
+      "startOffset": "300vh",
+      "duration": "100vh",
+      "properties": [
+        {
+          "startValue": 0,
+          "endValue": -100,
+          "unit": "%",
+          "property": "translateY"
+        }
+      ]
+    },
+    {
+      "start": ".gift-options",
+      "startOffset": "500vh",
+      "duration": "100vh",
+      "properties": [
+        {
+          "startValue": -100,
+          "endValue": 0,
+          "unit": "%",
+          "property": "translateX"
+        }
+      ]
+    }
+  ],
+  "giftIntro": [
+    {
+      "start": "self",
+      "duration": "100vh",
+      "properties": [
+        {
+          "startValue": -100,
+          "endValue": 0,
+          "unit": "vh",
+          "property": "translateY"
+        }
+      ]
+    }
+  ],
+  "giftTable": [
+    {
+      "start": "self",
+      "startOffset": "100vh",
+      "duration": "50vh",
+      "properties": [
+        {
+          "startValue": 0,
+          "endValue": 1,
+          "property": "scale"
+        }
+      ]
+    }
+  ]
 }

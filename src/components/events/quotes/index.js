@@ -7,11 +7,11 @@ import { Parallax as ScrollParallax } from "react-scroll-parallax";
 function Quotes({firstQuote, secondQuote }) {
   return (
     <section className="event__quotes event__section-layout">
-      <Parallax strength={-500} bgImage="/assets/img/bg/horoscope2.webp">
+      <Parallax strength={300} bgImage="/assets/img/bg/celestial-backgrounds-12.jpg">
         <div className="container">
           <ScrollParallax x={[-150, 0]}>
             <div className="imgBx jarallax">
-              <img className="jarallax-img" src='/assets/img/foto3.jpg' />
+              <img className="jarallax-img" src='/assets/img/celebrant/quote1.jpg' />
             </div>
           </ScrollParallax>
           <div className="event__quotes-text">
@@ -33,7 +33,7 @@ function Quotes({firstQuote, secondQuote }) {
           </div>
           <ScrollParallax x={[100, -50]}>
             <div className="imgBx jarallax">
-              <img className="jarallax-img" src='/assets/img/foto4.jpg' />
+              <img className="jarallax-img" src='/assets/img/celebrant/quote2.jpg' />
             </div>
           </ScrollParallax>
         </div>

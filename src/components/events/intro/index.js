@@ -6,7 +6,7 @@ import Sparkles from "../../utils/sparkle";
 
 const style = {
   alignItems: "center",
-  width: "100vw",
+  width: "100%",
   height: "300vh",
   background: "url(/assets/img/bg/moon_1@3x.png)",
   display: "flex",
@@ -51,7 +51,7 @@ export const Intro = ({ title, subtitle }) => {
                 <>
                   <div
                     className="primary-font text-shadow_border type-bold-72 text-3d"
-                    style={{width: "100vw"}}
+                    style={{width: "100%"}}
                   >
                     <p className="py-4 text-shadow_border">{title}</p>
                     {/* <span><img src='/assets/img/crown@2x.png' /></span> */}
