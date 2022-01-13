@@ -1,7 +1,6 @@
 @import '../../core.scss';
 @import './fly-animations.scss';
 
-$blue-color: #0833A2;
 
 .over-hide {
   overflow: hidden;
@@ -31,7 +30,7 @@ $blue-color: #0833A2;
     padding: 0;
     margin: 0 auto;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 14px;
@@ -42,7 +41,7 @@ $blue-color: #0833A2;
     overflow: hidden;
     color: $white;
     text-align: left;
-    border: solid 1px $blue-color;
+    border: solid 1px $primary-blue;
 
     &::before {
       position: absolute;
@@ -60,7 +59,7 @@ $blue-color: #0833A2;
       position: absolute;
       content: '';
       z-index: -1;
-      background-color: $blue-color;
+      background-color: $primary-blue;
       width: 126px;
       height: 40px;
       display: block;
@@ -78,14 +77,14 @@ $blue-color: #0833A2;
     display: block;
   }
   .float-right {
-    color: $blue-color;
+    color: $primary-blue;
   }
   &.is-checked {
     .float-right {
       color: $white;
     }
     .block-diff {
-      color: $blue-color;
+      color: $primary-blue;
     }
   } 
   .float-right {
@@ -166,7 +165,7 @@ $blue-color: #0833A2;
       width: 100%;
       display: block;
       text-align: center;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       letter-spacing: 3px;
       font-size: 22px;
@@ -178,7 +177,7 @@ $blue-color: #0833A2;
       position: relative;
       display: block;
       text-align: center;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 400;
       letter-spacing: 1px;
       font-size: 36px;
@@ -191,7 +190,7 @@ $blue-color: #0833A2;
       width: 100%;
       display: block;
       text-align: center;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 500;
       font-size: 18px;
       line-height: 1.2;

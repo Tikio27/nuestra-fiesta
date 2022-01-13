@@ -34,8 +34,24 @@
 .event__hero {
   height: 200vh;
   width: 100%;
-  .event__background img {
-    object-position: 35% 0;
+  .event__background {
+    img {
+      object-position: 35% 0;
+    }
+  }
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 991px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    height: 300vh !important;
+    .event__background {
+      height: 300vh;
+      img {
+        height: 300vh !important;
+        top: -20%;
+      }
+    }
   }
 }
 
@@ -106,7 +122,7 @@
   left: -25%;
   background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
   background-color: rgba(0, 0, 0, 0);
-  min-height: 200vh;
+  min-height: 300vh;
   position: absolute;
   height: auto;
 }
@@ -311,14 +327,8 @@
   }
 }
 
-.event__presentation-text {
-  // &:hover {
-  //   transform: translateZ(50px);
-  // }
-}
-
 .event__bg{
-  background-image: url('../../../public/assets/img/foto6.jpg');
+  // background-image: url('../../../public/assets/img/foto6.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -337,6 +347,14 @@
   position: relative;
   width: 100%;
   min-height: 60vh;
+   /* Landscape */
+  @media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 991px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape) {
+      min-height: 100vh;
+  }
 }
 .event__gb--overlay-color {
   position: absolute;
@@ -353,6 +371,7 @@
 .event__locations {
   height: auto;
   min-height: 100vh;
+  color: $primary-blue;
 }
 
 .dress-code-img {
@@ -388,6 +407,20 @@
   height: 100%;
   object-fit: cover;
 }
+
+// .event__presentation--title {
+//   // @include media-breakpoint-up(lg) {
+//     font-size: 48px;
+//     font-weight: 700;
+//   // }
+// }
+
+.event__presentation-text > p {
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+  }
+}
+
 
 .footer-bottom{
 	width: 100%;

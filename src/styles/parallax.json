@@ -113,7 +113,7 @@
   "presentation": [
     {
     "start": "self",
-    "duration": "90vh",
+    "duration": "50vh",
     "properties": [
       {
         "startValue": 0,
@@ -135,18 +135,18 @@
     },
     {
       "start": "self",
-      "startOffset": "90vh",
+      "startOffset": "50vh",
       "duration": "100vh",
       "properties": [
         {
           "startValue": 0,
-          "endValue": 100,
+          "endValue": 50,
           "unit": "vh",
           "property": "translateY"
         }
       ]
     }
-],
+  ],
   "giftSection": [
     {
       "start": ".gift-options",
@@ -212,6 +212,25 @@
           "startValue": 0,
           "endValue": 1,
           "property": "scale"
+        }
+      ]
+    }
+  ],
+  "dontMiss": [
+    {
+      "start": "self",
+      "duration": "70vh",
+      "properties": [
+        {
+          "startValue": 0,
+          "endValue": 1,
+          "property": "scale"
+        },
+        {
+          "startValue": -100,
+          "endValue": 30,
+          "unit": "%",
+          "property": "translateY"
         }
       ]
     }

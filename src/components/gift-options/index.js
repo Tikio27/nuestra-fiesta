@@ -78,7 +78,7 @@ function GiftOptions(config) {
                       <Tween stagger={1} duration={1.5}>
                         <section className="giftcard-content amazon col-12 col-md-6">
                           <div className='giftcard amazon animate__delay-1s'>
-                            <a className="giftcard-cover" href="https://www.amazon.com.mx/" target="_blank">
+                            <a className="giftcard-cover" href="https://www.amazon.com.mx/wedding/camila-rodriguez-camila-rodriguez-guadalajara-february-2022/registry/3CEXKIJHCCRC9" target="_blank">
                               <div className="gift-card card-amazon" />
                             </a>
                           </div>
@@ -91,14 +91,15 @@ function GiftOptions(config) {
                       <Tween stagger={1} duration={1.5}>
                         <section className="giftcard-content liverpool col-12 col-md-6">
                           <div className="giftcard liverpool animate__delay-2s">
-                            <a className="giftcard-cover " href="https://www.liverpool.com.mx/" target="_blank">
+                            <a className="giftcard-cover " href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/50790269" target="_blank">
                               <div className="gift-card card-liverpool" />
+                              <span className="giftcard-cover--text text-center">Evento: 50790269</span>
                             </a>
                           </div>
                         </section>
                       </Tween>
                     </ScrollTrigger>
-                    <ScrollTrigger trigger="#slide-2"
+                    {/* <ScrollTrigger trigger="#slide-2"
                       onUpdate={(self) => addAnimation('.giftcard.sears', 'animate__bounceInDown', self)}
                       start="top -70%" end="top -150%" scrub={1}>
                       <Tween stagger={1} duration={1.5}>
@@ -123,7 +124,7 @@ function GiftOptions(config) {
                           </div>
                         </section>
                       </Tween>
-                    </ScrollTrigger>
+                    </ScrollTrigger> */}
                   </div>
                 </div>
               </div>
@@ -133,7 +134,7 @@ function GiftOptions(config) {
                     start="top -170%" end="top -220%" scrub={1}>
                     <Tween from={{ y: '-800%' }} stagger={1} duration={3.5} wrapper={<div className="slide3-title" />}>
                       <SplitChars
-                        wrapper={<p className="type-normal-36 primary-font" style={{ display: 'inline-block', paddingLeft: "10px", paddingRight: "10px" }} />}
+                        wrapper={<p className="type-normal-36 primary-font envelope-char" style={{ display: 'inline-block', paddingLeft: "10px", paddingRight: "10px" }} />}
                       >
                         ¡Lluvia de Sobres!
                       </SplitChars>

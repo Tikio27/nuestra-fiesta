@@ -67,32 +67,32 @@ export const Intro = ({ title, subtitle }) => {
                 </>
               )}
               <div
-                className="intro-content primary-font type-normal-48 text-shadow_border">
+                className="intro-content primary-font type-normal-24 text-shadow_border px-4">
                 <div className="text-3d-wrapper">
                   <div className="text-3d">
-                    <DIV className="intro-text"
+                    <DIV className="intro-text py-4"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: scrubPercent >= 10 ? 1 : 0 }}
                     >
-                      Bienvenidos
+                      Hoy comienza otra etapa, otros caminos, otros sueños…
                     </DIV>
-                    <DIV className="intro-text"
+                    <DIV className="intro-text py-4"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: scrubPercent >= 20 ? 1 : 0 }}
                     >
-                      Al inicio de
+                      Atrás quedaron imborrables recuerdos y se forjaran otros…
                     </DIV>
-                    <DIV className="intro-text"
+                    <DIV className="intro-text py-4"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: scrubPercent >= 30 ? 1 : 0 }}
                     >
-                      Mi
+                      Hoy guardo en mis brazos la estrella divina que fue mi niñez.
                     </DIV>
-                    <DIV className="intro-text"
+                    <DIV className="intro-text py-4"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: scrubPercent >= 40 ? 1 : 0 }}
                     >
-                      Cuento de hadas
+                      Y hoy mi adolescencia con alas de ángel se eleva hacia el cielo por primera vez.
                     </DIV>
                   </div>
                 </div>
