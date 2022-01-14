@@ -2,7 +2,7 @@ import './App.scss';
 import 'animate.css'; //npm install animate.css
 import React from 'react';
 import Events from './components/events';
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ParallaxProvider } from 'react-scroll-parallax';
 class App extends React.Component {
 
@@ -10,8 +10,7 @@ class App extends React.Component {
     return (
       <ParallaxProvider>
         <main>
-          <Events />
-          {/* <Router>
+          <Router>
             <Switch>
               <Route path="/:id/:guest">
                   <Events/>
@@ -19,11 +18,8 @@ class App extends React.Component {
               <Route path="/:id/">
                 <Events />
               </Route>
-              <Route path="/">
-                <Events />
-              </Route>
             </Switch>
-          </Router> */}
+          </Router>
         </main>
       </ParallaxProvider>
     );

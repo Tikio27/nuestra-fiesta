@@ -22,18 +22,18 @@ import GiftOptions from '../gift-options';
 import Gallery from '../gallery';
 
 function Events() {
-  // const { id, guest } = useParams();
+  const { id, guest } = useParams();
   const [eventData, setEventData] = useState();
   const [eventId, setEventId] = useState();
-  const [paramId, setParamId] = useState('camila-misxvs');
+  const [paramId, setParamId] = useState();
   const [error, setError] = useState(false);
   let heroImg = '';
 
-  // useEffect(() => {
-  //   if (id) {
-  //     setParamId(id);
-  //   }
-  // }, [id]);
+  useEffect(() => {
+    if (id) {
+      setParamId(id);
+    }
+  }, [id]);
 
   useEffect(() => {
     if (paramId) {
