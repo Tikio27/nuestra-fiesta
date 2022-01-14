@@ -7,7 +7,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'index.bundle.js',
-    publicPath: '/'
+    publicPath: '/',
+    assetModuleFilename: 'assets/img/[hash][ext][query]'
   },
   // Optional and for development only. This provides the ability to
   // map the built code back to the original source format when debugging.
@@ -17,7 +18,7 @@ module.exports = {
     port: 3000,
     historyApiFallback: true,
   },
-    // Rules of how webpack will take our files, complie & bundle them for the browser 
+  // Rules of how webpack will take our files, complie & bundle them for the browser 
   module: {
     rules: [
       {
@@ -30,8 +31,15 @@ module.exports = {
       {
         test: /\.(sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(png|jpg|gif|jpeg|webp|svg)$/i,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.(png|jpg|gif|jpeg|webp|svg)$/i,
+        type: 'asset/inline'
       }
-
     ]
   },
   plugins: [new HtmlWebpackPlugin({
