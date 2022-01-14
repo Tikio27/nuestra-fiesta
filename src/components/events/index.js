@@ -124,7 +124,7 @@ function Events() {
                 <div className="event__presentation-content">
                 <div className="text-center p-4 event__presentation-text text-shadow_border">
                     <p className="type-bold-12 secondary-font pb-4">Estamos muy felices! y queremos compartirlo con todos ustedes, preparando una fiesta muy especial con gente linda, momentos emotivos, risas y muchas sorpresas más…</p>
-                    <div className="divider "><div className="dividermask"></div><span><img src='%PUBLIC_URL%/favicon.ico'/></span></div>
+                    <div className="divider "><div className="dividermask"></div><span><img src='/assets/img/misxv.ico'/></span></div>
                     <div>
                       <p className="primary-font type-bold-36 pt-4 ">¡Mis XV Años!</p>
                       <p className="primary-font type-bold-24">Sabado, 12 de Febrero 2022</p>
@@ -172,7 +172,7 @@ function Events() {
               </Plx>
             </Parallax>
           </section>
-          <div className="divider"><div className="dividermask"></div><span><img src='%PUBLIC_URL%/favicon.ico' /></span></div>
+          <div className="divider"><div className="dividermask"></div><span><img src='/assets/img/misxv.ico' /></span></div>
           <section className="event__section-dress-code">
             <div className="container p-5">
               <div className="p-4 text-center">
@@ -182,11 +182,11 @@ function Events() {
               </div>
             </div>
           </section>
-          <div className="divider"><div className="dividermask"></div><span><img src='%PUBLIC_URL%/favicon.ico' /></span></div>
+          <div className="divider"><div className="dividermask"></div><span><img src='/assets/img/misxv.ico' /></span></div>
           <Parallax strength={-300} className="custom-bg" bgImage="/assets/img/celebrant/footer_bg.jpg">
             <div className="event_min-height"></div>
           </Parallax>
-          <div className="divider"><div className="dividermask"></div><span><img src='%PUBLIC_URL%/favicon.ico' /></span></div>
+          <div className="divider"><div className="dividermask"></div><span><img src='/assets/img/misxv.ico' /></span></div>
           <Gallery />
           <section className="event__dont-miss">
             <Parallax strength={300} bgImage="/assets/img/celebration.jpeg">
