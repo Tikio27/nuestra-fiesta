@@ -87,8 +87,6 @@ function Events() {
             </Parallax>
           </section>
           <div className='pt-1' />
-          {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
-
           <section className="event__celebrant">
             <Parallax strength={600} bgImage="/assets/img/bg/zodiac.jpg" className="event__celebrant-bg">
               <Plx parallaxData={ parallaxData.opacity }>
@@ -103,7 +101,6 @@ function Events() {
             </Parallax>
           </section>
           <div className='pt-1' />
-          {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
           {isDesktopOrLaptop && (
             <Quotes firstQuote={eventData.quotes.firstQuote} secondQuote={eventData.quotes.secondQuote} />
           )}
@@ -116,12 +113,9 @@ function Events() {
             </Parallax>
           )}
 
-          {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico' /></span></div> */}
           <div className='pt-1' />
           <Parents parents={eventData.parents} godparents={eventData.godparents}/>
 
-          {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
-          
           <div className='pt-1' />
           <section className="event__presentation">
             <img src="/assets/img/bg/zodiac3.gif" className="event__presentation-bg"/>
@@ -130,7 +124,7 @@ function Events() {
                 <div className="event__presentation-content">
                 <div className="text-center p-4 event__presentation-text text-shadow_border">
                     <p className="type-bold-12 secondary-font pb-4">Estamos muy felices! y queremos compartirlo con todos ustedes, preparando una fiesta muy especial con gente linda, momentos emotivos, risas y muchas sorpresas más…</p>
-                    <div className="divider "><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div>
+                    <div className="divider "><div className="dividermask"></div><span><img src='%PUBLIC_URL%/favicon.ico'/></span></div>
                     <div>
                       <p className="primary-font type-bold-36 pt-4 ">¡Mis XV Años!</p>
                       <p className="primary-font type-bold-24">Sabado, 12 de Febrero 2022</p>
@@ -143,8 +137,6 @@ function Events() {
             </Plx>
           </section>
 
-          {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
-
           <section className="event__bg-section">
             <div className="event__bg event__bg--1">
               <div className="event__gb--overlay">
@@ -152,8 +144,6 @@ function Events() {
               </div>
             </div>
           </section>
-
-          {/* <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico'/></span></div> */}
 
           <section className="event__locations event__section-layout">
             <div className="text-center py-4">
@@ -172,10 +162,6 @@ function Events() {
               </div>
             </div>
           </section>
-          {/* <div className="divider">
-            <div className="dividermask"></div>
-            <span><img src='/favicon.ico' /></span>
-          </div> */}
           <section className="event-gift-section">
             <GiftOptions config={eventData.properties.giftTable} />
           </section>
@@ -186,7 +172,7 @@ function Events() {
               </Plx>
             </Parallax>
           </section>
-          <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico' /></span></div>
+          <div className="divider"><div className="dividermask"></div><span><img src='%PUBLIC_URL%/favicon.ico' /></span></div>
           <section className="event__section-dress-code">
             <div className="container p-5">
               <div className="p-4 text-center">
@@ -196,11 +182,11 @@ function Events() {
               </div>
             </div>
           </section>
-          <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico' /></span></div>
+          <div className="divider"><div className="dividermask"></div><span><img src='%PUBLIC_URL%/favicon.ico' /></span></div>
           <Parallax strength={-300} className="custom-bg" bgImage="/assets/img/celebrant/footer_bg.jpg">
             <div className="event_min-height"></div>
           </Parallax>
-          <div className="divider"><div className="dividermask"></div><span><img src='/favicon.ico' /></span></div>
+          <div className="divider"><div className="dividermask"></div><span><img src='%PUBLIC_URL%/favicon.ico' /></span></div>
           <Gallery />
           <section className="event__dont-miss">
             <Parallax strength={300} bgImage="/assets/img/celebration.jpeg">
