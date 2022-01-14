@@ -22,18 +22,18 @@ import GiftOptions from '../gift-options';
 import Gallery from '../gallery';
 
 function Events() {
-  const { id, guest } = useParams();
+  // const { id, guest } = useParams();
   const [eventData, setEventData] = useState();
   const [eventId, setEventId] = useState();
-  const [paramId, setParamId ] = useState();
+  const [paramId, setParamId] = useState('camila-misxvs');
   const [error, setError] = useState(false);
   let heroImg = '';
 
-  useEffect(() => {
-    if (id) {
-      setParamId(id);
-    }
-  }, [id]);
+  // useEffect(() => {
+  //   if (id) {
+  //     setParamId(id);
+  //   }
+  // }, [id]);
 
   useEffect(() => {
     if (paramId) {
@@ -168,7 +168,7 @@ function Events() {
           <section className="event__section-rsvp">
             <Parallax strength="500" bgImage="/assets/img/bg/horoscope.webp" className="event__background">
               <Plx parallaxData={parallaxData.rsvp}>
-                <RsvpCard guestId={guest} eventId={eventId} eventData={eventData} />
+                <RsvpCard eventId={eventId} eventData={eventData} />
               </Plx>
             </Parallax>
           </section>
