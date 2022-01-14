@@ -3,7 +3,6 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import { ScrollWrapper } from "../../utils/scrollWrapper";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import Sparkles from "../../utils/sparkle";
-import img from '../../../../public/assets/img/bg/'
 
 const style = {
   alignItems: "center",
