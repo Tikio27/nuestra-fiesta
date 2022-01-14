@@ -30,8 +30,11 @@ module.exports = {
       {
         test: /\.(sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(png|jpg|gif|jpeg|webp|svg)$/i,
+        type: 'asset/resource'
       }
-
     ]
   },
   plugins: [new HtmlWebpackPlugin({
