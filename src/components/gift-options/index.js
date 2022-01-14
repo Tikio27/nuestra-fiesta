@@ -42,7 +42,7 @@ function GiftOptions(config) {
                   <Scene duration="100%" triggerHook="onEnter" >
                     <Timeline wrapper={<div className="parallax" />}>
                       <Tween stagger={1} position="0" from={{ yPercent: -50, opacity: 0 }} to={{ yPercent: 0, opacity: 1 }}>
-                        <img src="/assets/img/gift/silver-stars.jpg" alt="" className='slide-1__bg'/>
+                        <img src="/public/assets/img/gift/silver-stars.jpg" alt="" className='slide-1__bg'/>
                       </Tween>
                       <div className="gift-container">
                         <Tween stagger={1} position="0"
@@ -51,7 +51,7 @@ function GiftOptions(config) {
                           <div className="slide-content text-center">
                             <h1 className="slide-1__title type-normal-36 primary-font">{config.title}</h1>
                             <p className="slide-1__description type-normal-24 secondary-font">{config.description}</p>
-                            <img className="slide-img" src="/assets/img/gift/boxes@2x.png" />
+                            <img className="slide-img" src="/public/assets/img/gift/boxes@2x.png" />
                           </div>
                         </Tween>
                       </div>
@@ -156,7 +156,7 @@ function GiftOptions(config) {
                     <div className="envelope-content text-center">
                         <p className="type-normal-24 secondary-font ">Si no tienes tiempo o no sabes qué regalarme</p>
                         <p className="type-normal-18 secondary-font ">La lluvia de sobres, es la tradición de regalar dinero en efectivo a la quinceañera en un sobre el día del evento.</p>
-                        <img src="/assets/img/gift/thank-you.png" />
+                        <img src="/public/assets/img/gift/thank-you.png" />
                     </div>
                     </Tween>
                   </ScrollTrigger>
