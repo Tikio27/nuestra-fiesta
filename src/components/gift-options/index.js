@@ -1,11 +1,14 @@
 import './index.scss';
-import 'animate.css';
+// import 'animate.css';
 import React, {useState, useEffect} from 'react';
 import Card from "react-credit-cards";
 import Plx from 'react-plx';
 import parallaxData from '../../styles/parallax.json';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline, ScrollTrigger, SplitWords, SplitChars } from 'react-gsap';
+import silverStars from '../../../public/assets/img/gift/silver-stars.jpg';
+import imgBoxes from '../../../public/assets/img/gift/boxes@2x.png';
+import imgThanks from '../../../public/assets/img/gift/thank-you.png';
 
 const animatedClass = 'animate__animated';
 
@@ -42,16 +45,16 @@ function GiftOptions(config) {
                   <Scene duration="100%" triggerHook="onEnter" >
                     <Timeline wrapper={<div className="parallax" />}>
                       <Tween stagger={1} position="0" from={{ yPercent: -50, opacity: 0 }} to={{ yPercent: 0, opacity: 1 }}>
-                        <img src="/assets/img/gift/silver-stars.jpg" alt="" className='slide-1__bg'/>
+                        <img src={silverStars} alt="" className='slide-1__bg' loading="lazy"/>
                       </Tween>
                       <div className="gift-container">
                         <Tween stagger={1} position="0"
                           from={{ yPercent: -100, scale: .6, opacity: 0 }}
                           to={{ yPercent: 0, scale: 1, opacity: 1 }}>
                           <div className="slide-content text-center">
-                            <h1 className="slide-1__title type-normal-36 primary-font">{config.title}</h1>
+                            {/* <h1 className="slide-1__title type-normal-36 primary-font">{config.title}</h1> */}
                             <p className="slide-1__description type-normal-24 secondary-font">{config.description}</p>
-                            <img className="slide-img" src="/assets/img/gift/boxes@2x.png" />
+                            <img className="slide-img" src={imgBoxes} loading="lazy"/>
                           </div>
                         </Tween>
                       </div>
@@ -61,7 +64,6 @@ function GiftOptions(config) {
               <div className="slide slide-2" id="slide-2">
                 <div className="gift-table-container">
                   <ScrollTrigger trigger="#slide-2"
-                    onUpdate={(self) => addAnimation('.giftcard-text', 'animate__zoomInDown', self)}
                     start="top -70%" end="top -150%" scrub={1} >
                     <Tween stagger={1} duration={1.5} wrapper={<div className="w-100" />}>
                       <div className="giftcard-text text-center type-normal-24">
@@ -73,7 +75,6 @@ function GiftOptions(config) {
                   </ScrollTrigger>
                   <div className='row w-100'>
                     <ScrollTrigger trigger="#slide-2"
-                      onUpdate={(self) => addAnimation('.giftcard.amazon', 'animate__bounceInRight', self)}
                       start="top -70%" end="top -150%" scrub={1}>
                       <Tween stagger={1} duration={1.5}>
                         <section className="giftcard-content amazon col-12 col-md-6">
@@ -86,7 +87,6 @@ function GiftOptions(config) {
                       </Tween>
                     </ScrollTrigger>
                     <ScrollTrigger trigger="#slide-2"
-                      onUpdate={(self) => addAnimation('.giftcard.liverpool', 'animate__bounceInUp', self)}
                       start="top -70%" end="top -150%" scrub={1}>
                       <Tween stagger={1} duration={1.5}>
                         <section className="giftcard-content liverpool col-12 col-md-6">
@@ -156,7 +156,7 @@ function GiftOptions(config) {
                     <div className="envelope-content text-center">
                         <p className="type-normal-24 secondary-font ">Si no tienes tiempo o no sabes qué regalarme</p>
                         <p className="type-normal-18 secondary-font ">La lluvia de sobres, es la tradición de regalar dinero en efectivo a la quinceañera en un sobre el día del evento.</p>
-                        <img src="/assets/img/gift/thank-you.png" />
+                        <img src={imgThanks} loading="lazy"/>
                     </div>
                     </Tween>
                   </ScrollTrigger>
@@ -180,7 +180,7 @@ function GiftOptions(config) {
                       <SplitWords
                         wrapper={<p className="debit-card-content__subtitle type-normal-18 secondary-font text-shadow_border" />}
                       >
-                        Asi que si lo prefieres puedes hacer transferencia bancaria a la siguiente tarjeta
+                        Asi que si lo prefieres puedes hacer transferencia bancaria a la siguiente tarjeta de BBVA
                         </SplitWords>
                     </Tween>
                   </ScrollTrigger>
@@ -194,9 +194,9 @@ function GiftOptions(config) {
                       <div className="debit-card__card">
                         <Card
                           name="Camila Rodríguez González"
-                          number="**** **** **** 7048"
+                          number="4152 3138 9256 8580"
                           expiry="**/**"
-                          cvc="737"
+                          cvc="123"
                           preview={true}
                           issuer="visa"
                           />

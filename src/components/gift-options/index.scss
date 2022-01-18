@@ -189,7 +189,6 @@ $card-height-mobile: 100px;
 
   .giftcard-text {
     width: 100%;
-    opacity: 0;
     &.animate__animated {
       opacity: 1;
     }
@@ -200,7 +199,7 @@ $card-height-mobile: 100px;
 
   .giftcard {
     // position: absolute;
-    opacity: 0;
+    // opacity: 0;
 
     &.animate__animated {
       opacity: 1;

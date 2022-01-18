@@ -33,17 +33,14 @@ function QuoteMobile({quote, imgUrl }) {
   return (
     <section className="event__quotes text-white text-center mb-5">
       <div className="quotes_quote_container">
-        {/* <Plx parallaxData={contentDataA}> */}
           <div className="quotes_content">
-            {/* </Plx> */}
             <Plx parallaxData={heroData}>
-              <img className="quotes-img" src={imgUrl} />
+              <img className="quotes-img" src={imgUrl} loading="lazy"/>
             </Plx>
-            <div className="quotes_text container p-2">
-              <p className="secondary-font type-normal-18">{quote}</p>
+            <div className="quotes_text container p-4">
+              <p className="secondary-font type-normal-18">{`"${quote}"`}</p>
             </div>
           </div>
-        {/* </Plx> */}
       </div>
     </section>
   )

@@ -28,7 +28,7 @@ export default function Events({parents, godparents}) {
           textAlign: "center"
         }}
       >
-        <div className="event__parents-content text-center blur-text-godparents">
+        <div className="event__parents-content text-center blur-text-godparents mt-5">
           <p className="parents-title secondary-font text-shadow_border type-bold-24">Y la compañia de mis padrinos</p>
           <p className="parents-name primary-font text-shadow_border text-white type-bold-36">{godparents.godFather}</p>
           <p className="parents-name primary-font text-shadow_border text-white type-bold-36">{godparents.godMother}</p>

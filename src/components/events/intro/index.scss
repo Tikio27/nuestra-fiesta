@@ -5,6 +5,13 @@
   transform-style: preserve-3d;
 }
 
+.event_intro--bg {
+  background-image: url('../../../../public/assets/img/bg/moon_1@2x.png');
+  @include media-breakpoint-up(lg) {
+    background-image: url('../../../../public/assets/img/bg/moon_1@3x.png');
+  }
+}
+
 .intro-container {
   position: sticky;
   top: 0%;

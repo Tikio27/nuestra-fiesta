@@ -8,7 +8,6 @@ const style = {
   alignItems: "center",
   width: "100%",
   height: "300vh",
-  background: "url(/assets/img/bg/moon_1@3x.png)",
   display: "flex",
   flexDirection: "column",
   backgroundRepeat: "no-repeat",
@@ -40,7 +39,7 @@ export const Intro = ({ title, subtitle }) => {
   return (
     <div ref={ref} >
       <ScrollWrapper onScroll={v => handleScrub(v)}>
-        <div style={{ ...style, y }} className="text-center text-white text-3d-wrap">
+        <div style={{ ...style, y }} className="event_intro--bg text-center text-white text-3d-wrap">
           <motion.div
               className="intro-container"
               initial={{ y: 0 }}
@@ -54,7 +53,6 @@ export const Intro = ({ title, subtitle }) => {
                     style={{width: "100%"}}
                   >
                     <p className="py-4 text-shadow_border">{title}</p>
-                    {/* <span><img src='/assets/img/crown@2x.png' /></span> */}
                     <DIV animate={{ translateY: ["-10px", "10px", "-10px"]}}
                       transition={{
                         loop: Infinity,

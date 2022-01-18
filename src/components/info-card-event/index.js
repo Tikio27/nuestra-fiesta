@@ -2,14 +2,24 @@ import './index.scss';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import InfoCardData from './infoCardData';
-
+import imgShine from '../../../public/assets/img/ceremony/card/rayos.png';
+import imgLayer from '../../../public/assets/img/ceremony/card/layer2.png';
+import imgNext from '../../../public/assets/img/ceremony/card/next-slide.png';
+import imgDecorationLeft from '../../../public/assets/img/ceremony/card/left.png';
+import imgDecorationRight from '../../../public/assets/img/ceremony/card/right.png';
+import imgCruz from '../../../public/assets/img/ceremony/card/cruz.png';
+import imgRoller from '../../../public/assets/img/cocktail/card/roller.png';
+import imgNote from '../../../public/assets/img/cocktail/card/nota.png';
+import imgNote2 from '../../../public/assets/img/cocktail/card/nota2.png';
+import imgRingBottomOne from '../../../public/assets/img/cocktail/card/ring1.png';
+import imgRingBottomTwo from '../../../public/assets/img/cocktail/card/ring2.png';
+import imgRingBottomThree from '../../../public/assets/img/cocktail/card/ring3.png';
+import imgRingTopOne from '../../../public/assets/img/cocktail/card/top-ring1.png';
+import imgRingTopTwo from '../../../public/assets/img/cocktail/card/top-ring2.png';
+import imgRingTopThree from '../../../public/assets/img/cocktail/card/top-ring3.png';
 export default function InfoCardEvent({ ceremony, cocktail }) {
   const [isChecked, setIsChecked] = useState(false);
-  ceremony = { "link": "https://www.google.com/maps/place/Emporio+Sal%C3%B3n+De+Eventos/@20.6366954,-103.4412077,15z/data=!4m5!3m4!1s0x0:0x815816c0861e99f!8m2!3d20.6366918!4d-103.4411821", "title": "Ceremonia Religiosa", "address": "C. Puerto Yavaros, Miramar, 45060 Zapopan, Jal.", "time": "06:00 PM", "location": "Emporio Salon de Eventos" };
-  cocktail = { "address": "C. Puerto Yavaros, Miramar, 45060 Zapopan, Jal.", "location": "Emporio Salon de Eventos", "link": "https://www.google.com/maps/place/Emporio+Sal%C3%B3n+De+Eventos/@20.6366954,-103.4412077,15z/data=!4m5!3m4!1s0x0:0x815816c0861e99f!8m2!3d20.6366918!4d-103.4411821", "title": "Recepción", "time": "07:00 PM" };
-  console.log(JSON.stringify(ceremony));
-  console.log(`Cocktail: ${JSON.stringify(cocktail)}`);
-  
+
   function _handleChange(event) {
     setIsChecked(!isChecked);
   }
@@ -33,12 +43,12 @@ export default function InfoCardEvent({ ceremony, cocktail }) {
                     <div className="card-front">
                       <div className="info-card-wrap">
                         <div className="img-wrap img-center">
-                          <img className="img-shine" src="/assets/img/ceremony/card/rayos.png" alt="" />
-                          <img className="img-layer" src="/assets/img/ceremony/card/layer2.png" alt="" />
-                          <img className="img-next" src="/assets/img/ceremony/card/next-slide.png" alt="" />
-                          <img className="img-decoration-left" src="/assets/img/ceremony/card/left.png" alt="" />
-                          <img className="img-decoration-right" src="/assets/img/ceremony/card/right.png" alt="" />
-                          <img className="img-cruz" src="/assets/img/ceremony/card/cruz.png" alt="" />
+                          <img className="img-shine" src={imgShine} alt="" loading="lazy"/>
+                          <img className="img-layer" src={imgLayer} alt="" loading="lazy"/>
+                          <img className="img-next" src={imgNext} alt="" loading="lazy"/>
+                          <img className="img-decoration-left" src={imgDecorationLeft} alt="" loading="lazy"/>
+                          <img className="img-decoration-right" src={imgDecorationRight} alt="" loading="lazy"/>
+                          <img className="img-cruz" src={imgCruz} alt="" loading="lazy"/>
                         </div>
                         <InfoCardData
                           address={ceremony.address}
@@ -53,33 +63,22 @@ export default function InfoCardEvent({ ceremony, cocktail }) {
                       <div className="info-card-wrap">
                         <div className="img-wrap img-cocktail-bg" />
                         <div className="img-wrap img-roller">
-                          <img src="/assets/img/cocktail/card/roller.png" alt="" />
+                          <img src={imgRoller} alt="" loading="lazy"/>
                         </div>
                         <div className="img-wrap img-notes">
-                          <img className="img-note img-note--one" src="/assets/img/cocktail/card/nota.png" alt="" />
-                          <img className="img-note img-note--two" src="/assets/img/cocktail/card/nota2.png" alt="" />
-                          <img className="img-note img-note--three" src="/assets/img/cocktail/card/nota.png" alt="" />
-                          <img className="img-note img-note--four" src="/assets/img/cocktail/card/nota2.png" alt="" />
+                          <img className="img-note img-note--one" src={imgNote} alt="" loading="lazy"/>
+                          <img className="img-note img-note--two" src={imgNote2} alt="" loading="lazy"/>
+                          <img className="img-note img-note--three" src={imgNote} alt="" loading="lazy"/>
+                          <img className="img-note img-note--four" src={imgNote2} alt="" loading="lazy"/>
                         </div>
                         <div className="img-wrap img-rings">
-                          <img className="img-ring img-ring--bottom-one" src="/assets/img/cocktail/card/ring1.png" alt="" />
-                          <img className="img-ring img-ring--bottom-two" src="/assets/img/cocktail/card/ring2.png" alt="" />
-                          <img className="img-ring img-ring--bottom-three" src="/assets/img/cocktail/card/ring3.png" alt="" />
-                          <img className="img-ring-top img-ring--top-one" src="/assets/img/cocktail/card/top-ring1.png" alt="" />
-                          <img className="img-ring-top img-ring--top-two" src="/assets/img/cocktail/card/top-ring2.png" alt="" />
-                          <img className="img-ring-top img-ring--top-three" src="/assets/img/cocktail/card/top-ring3.png" alt="" />
+                          <img className="img-ring img-ring--bottom-one" src={imgRingBottomOne} alt="" loading="lazy"/>
+                          <img className="img-ring img-ring--bottom-two" src={imgRingBottomTwo} alt="" loading="lazy"/>
+                          <img className="img-ring img-ring--bottom-three" src={imgRingBottomThree} alt="" loading="lazy"/>
+                          <img className="img-ring-top img-ring--top-one" src={imgRingTopOne} alt="" loading="lazy"/>
+                          <img className="img-ring-top img-ring--top-two" src={imgRingTopTwo} alt="" loading="lazy"/>
+                          <img className="img-ring-top img-ring--top-three" src={imgRingTopThree} alt="" loading="lazy"/>
                         </div>
-                        {/* <div className="img-wrap img-cocktail-gifts">
-                          <img src="/assets/img/cocktail/gifts.png" alt="" />
-                        </div> */}
-                        {/* <div className="img-wrap img-cocktail-ballons">
-                          <img className="ballon-left-1" src="/assets/img/cocktail/ballon-left1.png" alt="" />
-                          <img className="ballon-left-2" src="/assets/img/cocktail/ballon-left2.png" alt="" />
-                          <img className="ballon-left-3" src="/assets/img/cocktail/ballon-left3.png" alt="" />
-                          <img className="ballon-right-1" src="/assets/img/cocktail/ballon-right1.png" alt="" />
-                          <img className="ballon-right-2" src="/assets/img/cocktail/ballon-right2.png" alt="" />
-                          <img className="ballon-right-3" src="/assets/img/cocktail/ballon-right3.png" alt="" />
-                        </div> */}
                         <InfoCardData
                           address={cocktail.address}
                           link={cocktail.link}

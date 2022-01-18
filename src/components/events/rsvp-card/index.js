@@ -1,26 +1,8 @@
 import './index.scss';
 import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 function RsvpCard({ guestId, eventId, eventData}) {
-  const [show, setShow] = useState(false);
-  const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    setValidated(true);
-  };
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  const guestData = eventData.guests.find(element => element['id'] === guestId);
-  // console.log(guestData.admissions);
   return (
     <div>
       <div className="rsvp">
@@ -43,36 +25,6 @@ function RsvpCard({ guestId, eventId, eventData}) {
           </div>
         </div>
       </div>
-      {guestId && (
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Cuentas con {guestData.admissions} ingresos, favor de registrar los nombres de las personas</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form onSubmit={handleSubmit} noValidate validated={validated}>
-              {guestData &&
-                [...Array(guestData.admissions)].map((x, i) =>
-                  <Form.Group key={i} controlId={`name${i + 1}`} className="py-1">
-                    <Form.Label>{i + 1}) Nombre: </Form.Label>
-                    <Form.Control as="input" type="text" placeholder="Ingresa el nombre" required />
-                    <Form.Control.Feedback type="invalid">
-                      Favor de ingresar un nombre valido
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                )}
-              <div className="py-3">
-                <Button variant="secondary" onClick={handleClose}>
-                  Cancelar
-                </Button>
-                <Button variant="primary" type="submit" className="ms-3">
-                  Enviar Registro
-                </Button>
-              </div>
-            </Form>
-          </Modal.Body>
-        </Modal>
-      )}
-        
     </div>
   )
 }

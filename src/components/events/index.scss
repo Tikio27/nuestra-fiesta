@@ -36,7 +36,10 @@
   width: 100%;
   .event__background {
     img {
-      object-position: 35% 0;
+      object-position: 40% 0;
+      @include media-breakpoint-up(lg) {
+        object-position: center;
+      }
     }
   }
   @media only screen
@@ -277,11 +280,11 @@
 // }
 
 .event__presentation {
-  height: 200vh;
+  height: 150vh;
   position: relative;
   overflow: hidden;
   @include media-breakpoint-up(lg) {
-    height: 100vh;
+    height: 150vh;
   }
   /* Portrait */
   @media only screen 
@@ -428,4 +431,11 @@
 	text-align: center;
 	color: #fff;
 	background: rgb(9, 95, 234);
+}
+
+.event__footer-bg img {
+  left: 40% !important;
+  @include media-breakpoint-up(lg) {
+    left: auto;
+  }
 }
