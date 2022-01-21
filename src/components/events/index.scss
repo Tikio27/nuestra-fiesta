@@ -37,9 +37,9 @@
   .event__background {
     img {
       object-position: 40% 0;
-      @include media-breakpoint-up(lg) {
-        object-position: center;
-      }
+      // @include media-breakpoint-up(lg) {
+      //   object-position: center;
+      // }
     }
   }
   @media only screen
@@ -222,7 +222,7 @@
 
 .event__parents-content,
 .event__godparents-content {
-  margin-top: 50px;
+  // margin-top: 50px;
 
   @include media-breakpoint-up(lg) {
     .parents-title {
@@ -294,7 +294,7 @@
       height: 100vh;
   }
   .is-landscape.is-mobile & {
-    height: 200vh;
+    height: 250vh;
   }
 }
 

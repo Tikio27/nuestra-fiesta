@@ -1,16 +1,22 @@
 
 .event__section-rsvp {
-  height: 200vh;
+  height: 250vh;
   /* Landscape */
-  @media only screen 
-    and (min-device-width: 320px) 
-    and (max-device-width: 991px)
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: landscape) {
-      height: 250vh;
+  .is-landscape & {
+      height: 300vh;
 
       .event__background {
-        height: 250vh;
+        height: 300vh;
+        img {
+          height: 300vh !important;
+        }
       }
+  }
+
+  .event__background {
+    height: 250vh;
+    img {
+      height: 250vh !important;
+    }
   }
 }

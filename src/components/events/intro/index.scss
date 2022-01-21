@@ -35,3 +35,13 @@
     font-size: 48px;
   }
 }
+
+.intro-text {
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  .is-landscape & {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}

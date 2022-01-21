@@ -1,5 +1,4 @@
 import './index.scss';
-// import 'animate.css';
 import React, {useState, useEffect} from 'react';
 import Card from "react-credit-cards";
 import Plx from 'react-plx';
@@ -43,12 +42,12 @@ function GiftOptions(config) {
               <div className="slide slide-1">
                   <Scene duration="100%" triggerHook="onEnter" >
                     <Timeline wrapper={<div className="parallax" />}>
-                      <Tween stagger={1} position="0" from={{ yPercent: -50, opacity: 0 }} to={{ yPercent: 0, opacity: 1 }}>
+                      <Tween stagger={1} position="0" from={{ yPercent: -50 }} to={{ yPercent: 0 }}>
                         <img src={silverStars} alt="" className='slide-1__bg' loading="lazy"/>
                       </Tween>
                       <div className="gift-container">
                         <Tween stagger={1} position="0"
-                          from={{ yPercent: -100, scale: .6, opacity: 0 }}
+                          from={{ yPercent: -100, scale: .6, opacity: 1 }}
                           to={{ yPercent: 0, scale: 1, opacity: 1 }}>
                           <div className="slide-content text-center">
                             {/* <h1 className="slide-1__title type-normal-36 primary-font">{config.title}</h1> */}

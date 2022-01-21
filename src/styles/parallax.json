@@ -140,7 +140,7 @@
       "properties": [
         {
           "startValue": 0,
-          "endValue": 50,
+          "endValue": 30,
           "unit": "vh",
           "property": "translateY"
         }
@@ -151,7 +151,7 @@
     {
       "start": ".gift-options",
       "startOffset": "150vh",
-      "duration": "100vh",
+      "duration": "50vh",
       "properties": [
       {
         "startValue": 0,

@@ -75,23 +75,23 @@ export const Intro = ({ title, subtitle }) => {
                     >
                       Hoy comienza otra etapa, otros caminos, otros sueños…
                     </DIV>
-                    <DIV className="intro-text py-4"
+                    <DIV className="intro-text"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: scrubPercent >= 20 ? 1 : 0 }}
                     >
-                      Atrás quedaron imborrables recuerdos y se forjaran otros…
+                      Atrás quedaron imborrables recuerdos y se forjaran otros…
                     </DIV>
-                    <DIV className="intro-text py-4"
+                    <DIV className="intro-text"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: scrubPercent >= 30 ? 1 : 0 }}
                     >
-                      Hoy guardo en mis brazos la estrella divina que fue mi niñez.
+                      Hoy guardo en mis brazos la estrella divina que fue mi niñez.
                     </DIV>
-                    <DIV className="intro-text py-4"
+                    <DIV className="intro-text"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: scrubPercent >= 40 ? 1 : 0 }}
                     >
-                      Y hoy mi adolescencia con alas de ángel se eleva hacia el cielo por primera vez.
+                      Y hoy mi adolescencia con alas de ángel se eleva hacia el cielo por primera vez.
                     </DIV>
                   </div>
                 </div>

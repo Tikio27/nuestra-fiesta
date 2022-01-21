@@ -35,6 +35,7 @@ import celebrantFooterBg from '../../../public/assets/img/celebrant/footer_bg.jp
 import celebrantFooterBgLarge from '../../../public/assets/img/celebrant/footer_bg-large.jpg';
 import imgDressCode from '../../../public/assets/img/dresscode.png';
 import celebrationBg from '../../../public/assets/img/celebration.jpeg';
+import StaySafe from './stay-safe';
 
 function Events() {
   const { id, guest } = useParams();
@@ -139,7 +140,7 @@ function Events() {
           </section>
           <div className='pt-1' />
           <section className="event__celebrant">
-            <Parallax strength={800} bgImage={skyBg} className="event__celebrant-bg">
+            <Parallax strength={300} bgImage={skyBg} className="event__celebrant-bg">
               <Plx parallaxData={ parallaxData.opacity }>
                 <div className="mx-auto text-center ">
                   <Suspense fallback={<div>Loading...</div>}>
@@ -255,6 +256,13 @@ function Events() {
           <Suspense fallback={<div>Loading...</div>}>
             <Separator />
           </Suspense>
+
+          <StaySafe />
+
+          <Suspense fallback={<div>Loading...</div>}>
+            <Separator />
+          </Suspense>
+
           <Parallax strength={-200} className="event__footer-bg"
             bgImage={isLandscape ? celebrantFooterBgLarge : celebrantFooterBg}
           >

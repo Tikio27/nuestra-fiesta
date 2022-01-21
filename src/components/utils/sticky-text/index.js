@@ -7,42 +7,41 @@ export default function StickyText({name, text, textLabel}) {
 
   const textData = [
     {
-      start: 'self',
-      // startOffset: 200,
-      duration: 400,
-      properties: [
+      "start": "self",
+      "duration": "80vh",
+      "properties": [
         {
-          startValue: 0,
-          endValue: 1,
-          property: 'opacity',
+          "startValue": 0,
+          "endValue": 1,
+          "property": "opacity"
         },
         {
-          startValue: 0,
-          endValue: 100,
-          property: 'scaleZ',
-        },
-      ],
+          "startValue": -80,
+          "endValue": 20,
+          "unit": "vh",
+          "property": "translateY"
+        }
+      ]
     },
     {
-      start: 'self',
-      startOffset: '20vh',
-      duration: '200vh',
-      // easing: [0.25, 0.1, 0.53, 3],
-      properties: [
+      "start": "self",
+      "startOffset": "80vh",
+      "duration": "150vh",
+      "properties": [
         {
-          startValue: -10,
-          endValue: 100,
-          unit: 'vh',
-          property: 'translateY',
-        },
-      ],
-    },
+          "startValue": 20,
+          "endValue": 120,
+          "unit": "vh",
+          "property": "translateY"
+        }
+      ]
+    }
   ];
 
   return (
     <Plx
       className='sticky-text'
-      parallaxData={ textData }
+      parallaxData={textData}
     >
       
       <div className="sticky-text__container text-shine">

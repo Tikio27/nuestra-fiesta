@@ -8,7 +8,7 @@ export default function Events({parents, godparents}) {
         style={{
           width: "90%",
           position: "absolute",
-          top: "30%",
+          top: "20%",
           marginLeft: "5%",
           textAlign: "center"
         }}
@@ -28,7 +28,7 @@ export default function Events({parents, godparents}) {
           textAlign: "center"
         }}
       >
-        <div className="event__parents-content text-center blur-text mt-5">
+        <div className="event__parents-content text-center blur-text">
           <p className="parents-title secondary-font text-shadow_border type-bold-18">Y la compañia de mis padrinos</p>
           {/* <p className="parents-title secondary-font text-shadow_border type-bold-18">Quinceaños</p> */}
           <p className="parents-name primary-font text-shadow_border text-white type-bold-36">{godparents.godMother}</p>
