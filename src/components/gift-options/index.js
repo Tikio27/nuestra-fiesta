@@ -22,7 +22,6 @@ function GiftOptions(config) {
 
   function addAnimation(elementClass, animationClass, self) {
     const el = document.querySelector(elementClass);
-    console.log(self.progress);
     if (self.progress > 0.8) {
       el.classList.remove(animatedClass, 'animate__hinge');
       el.classList.add(animatedClass, animationClass);
@@ -180,7 +179,7 @@ function GiftOptions(config) {
                       <SplitWords
                         wrapper={<p className="debit-card-content__subtitle type-normal-18 secondary-font text-shadow_border" />}
                       >
-                        Asi que si lo prefieres puedes hacer transferencia bancaria a la siguiente tarjeta de BBVA
+                        Asi que si lo prefieres puedes hacer transferencia bancaria a la siguiente tarjeta BBVA
                         </SplitWords>
                     </Tween>
                   </ScrollTrigger>

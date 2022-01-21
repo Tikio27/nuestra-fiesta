@@ -6,24 +6,17 @@ import { useParams } from "react-router-dom";
 import { Parallax } from 'react-parallax';
 import Plx from 'react-plx';
 import { useMediaQuery } from 'react-responsive';
+import { Hearts } from 'react-loader-spinner';
+import { useDeviceSelectors, useMobileOrientation } from 'react-device-detect';
+
 // Modules
 import parallaxData from '../../styles/parallax.json';
-// import StickyText from '../utils/sticky-text';
-// import CountdownCards from '../countdown-cards';
-// import Sparkles from '../utils/sparkle';
-// import RsvpCard from './rsvp-card';
 import { Intro } from './intro';
-// import Quotes from './quotes';
-// import QuoteMobile from './quoteMobile';
-// import Parents from './parents';
-// import InfoCardEvent from '../info-card-event';
-// import GiftOptions from '../gift-options';
 const StickyText = React.lazy(() => import('../utils/sticky-text'));
 const RsvpCard = React.lazy(() => import('./rsvp-card'));
 const GiftOptions = React.lazy(() => import('../gift-options'));
 const CountdownCards = React.lazy(() => import('../countdown-cards'));
 const Sparkles = React.lazy(() => import('../utils/sparkle'));
-// const Intro = React.lazy(() => import('./intro'));
 const Quotes = React.lazy(() => import('./quotes'));
 const QuoteMobile = React.lazy(() => import('./quoteMobile'));
 const Parents = React.lazy(() => import('./parents'));
@@ -32,7 +25,6 @@ const Separator = React.lazy(() => import('./separator'));
 
 // Images
 import heroImg from '../../../public/assets/img/celebrant/hero.jpg';
-// import zodiacBg from '../../../public/assets/img/bg/zodiac.jpg';
 import skyBg from '../../../public/assets/img/sky5.png';
 import quoteMobileBg from '../../../public/assets/img/bg/celestial-backgrounds-12.jpg';
 import quote1 from '../../../public/assets/img/celebrant/quote1.jpg';
@@ -40,27 +32,21 @@ import quote2 from '../../../public/assets/img/celebrant/quote2.jpg';
 import presentationBg from '../../../public/assets/img/bg/zodiac3.gif';
 import rsvpBg from '../../../public/assets/img/bg/horoscope.webp';
 import celebrantFooterBg from '../../../public/assets/img/celebrant/footer_bg.jpg';
+import celebrantFooterBgLarge from '../../../public/assets/img/celebrant/footer_bg-large.jpg';
 import imgDressCode from '../../../public/assets/img/dresscode.png';
 import celebrationBg from '../../../public/assets/img/celebration.jpeg';
-
-// const parallaxData = React.lazy(() => import('../../styles/parallax.json'));
-
-// const skyBg = React.lazy(() => import('../../../public/assets/img/sky5.png'));
-// const quoteMobileBg = React.lazy(() => import('../../../public/assets/img/bg/celestial-backgrounds-12.jpg'));
-// const quote1 = React.lazy(() => import('../../../public/assets/img/celebrant/quote1.jpg'));
-// const quote2 = React.lazy(() => import('../../../public/assets/img/celebrant/quote2.jpg'));
-// const presentationBg = React.lazy(() => import('../../../public/assets/img/bg/zodiac3.gif'));
-// const rsvpBg = React.lazy(() => import('../../../public/assets/img/bg/horoscope.webp'));
-// const celebrantFooterBg = React.lazy(() => import('../../../public/assets/img/celebrant/footer_bg.jpg'));
-// const imgDressCode = React.lazy(() => import('../../../public/assets/img/dresscode.png'));
-// const celebrationBg = React.lazy(() => import('../../../public/assets/img/celebration.jpeg'));
 
 function Events() {
   const { id, guest } = useParams();
   const [eventData, setEventData] = useState();
   const [eventId, setEventId] = useState();
   const [paramId, setParamId] = useState();
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const { isLandscape } = useMobileOrientation();
+  const [selectors, data] = useDeviceSelectors(window.navigator.userAgent)
+  const { isMobile, isIOS } = selectors;
 
   useEffect(() => {
     if (id) {
@@ -69,7 +55,14 @@ function Events() {
   }, [id]);
 
   useEffect(() => {
-    setEventData(JSON.parse(`{"eventType":"XV Años","name":"camila-misxvs","eventTitle":"Mis XV's","properties":{"dressCode":"Formal","giftTable":{"description":"Mi mejor regalo es compartir contigo este gran día, Sin embargo si deseas obsequiarme algo, puedo sugerir las siguientes opciones.","title":"Mesa de Regalos","options":[{"store":"Amazon","url":"http://amazon.com.mx","code":"123456"},{"store":"Liverpool","code":"654321","url":"http://liverpool.com.mx"}]},"staySafe":"Debes portar el cubrebocas todo el tiempo posible. Sabemos que estás feliz por mi, pero evita abrazarme. ¡Cuidemos a la quinceañera! Permite que el personal revise tu temperatura a la entrada. Lava tus manos antes y después de comer o cada vez que te levantes de tu mesa. Si sientes algún síntoma previo al evento háznoslo saber, nosotros comprenderemos tu ausencia.","hashtag":"#misXVCami"},"quotes":{"stickyText":"La vida es maravillosa a cualquier edad, pero los quince... ","stickyTextLabel":"Son imposibles de olvidar","section1":"La vida es maravillosa a cualquier edad, pero los quince... ","firstQuote":"Quince años es pasar de la niñez a la adolescencia, entrar a un mundo desconocido y nuevo, continuar sintiéndose querida y acompañada, celebrar lo vivido hasta aquí, comenzar una nueva etapa.","secondQuote":"La luna se encuentra en tu sonrisa y el sol en tu mirada.","section2":"Los momentos más importantes de la vida se convierten en inolvidables cuando los compartes con quienes más amas."},"godParents":[{"godMother":"Madrina","godFather":"Padrino","role":"XV Años"},{"role":"XV Años","godMother":"Madrina","godFather":"Padrino"}],"ampm":"pm","date":"02-12-2022","time":"06:00","owner":{"phone":3338454848,"email":"jerp27@gmail.com","addess":"Fresno 30","name":"J Eutiquio"},"godparents":{"godMother":"Emma Sandoval","godFather":"Jesus Esparza"},"urlPath":"cami-20120212","celebrantName":"Camila Guadalupe Rodríguez González","type":"basic, premium, golden","eventSubtitle":"Bienvenidos al inicio de mi cuento de hadas.","parents":{"father":"J. Eutiquio Rodriguez Parra","mother":"Sandra Celina González Monroy"},"guests":[{"email":"jerp27@gmail.com","phone":3338454848,"id":"famrodgon","name":"Eutiquio","userGuest":{},"admissions":3,"hasConfirmed":false}],"locations":{"ceremony":{"address":"C. Puerto Yavaros, Miramar, 45060 Zapopan, Jal.","location":"Emporio Salon de Eventos","link":"https://www.google.com/maps/place/Emporio+Sal%C3%B3n+De+Eventos/@20.6366954,-103.4412077,15z/data=!4m5!3m4!1s0x0:0x815816c0861e99f!8m2!3d20.6366918!4d-103.4411821","title":"Ceremonia Religiosa","time":"05:30 PM"},"cocktail":{"location":"Emporio Salon de Eventos","title":"Recepción","time":"06:30 PM","address":"C. Puerto Yavaros, Miramar, 45060 Zapopan, Jal.","link":"https://www.google.com/maps/place/Emporio+Sal%C3%B3n+De+Eventos/@20.6366954,-103.4412077,15z/data=!4m5!3m4!1s0x0:0x815816c0861e99f!8m2!3d20.6366918!4d-103.4411821"}}}`));
+    window.scrollTo(0, 0);
+  }, [isLandscape]);
+
+  useEffect(() => {
+    setEventData(JSON.parse(`{"eventType":"XV Años","name":"camila-misxvs","eventTitle":"Mis XV's","properties":{"dressCode":"Formal","giftTable":{"description":"Mi mejor regalo es compartir contigo este gran día, Sin embargo si deseas obsequiarme algo, puedo sugerir las siguientes opciones.","title":"Mesa de Regalos","options":[{"store":"Amazon","url":"http://amazon.com.mx","code":"123456"},{"store":"Liverpool","code":"654321","url":"http://liverpool.com.mx"}]},"staySafe":"Debes portar el cubrebocas todo el tiempo posible. Sabemos que estás feliz por mi, pero evita abrazarme. ¡Cuidemos a la quinceañera! Permite que el personal revise tu temperatura a la entrada. Lava tus manos antes y después de comer o cada vez que te levantes de tu mesa. Si sientes algún síntoma previo al evento háznoslo saber, nosotros comprenderemos tu ausencia.","hashtag":"#misXVCami"},"quotes":{"stickyText":"La vida es maravillosa a cualquier edad, pero los quince... ","stickyTextLabel":"Son imposibles de olvidar","section1":"La vida es maravillosa a cualquier edad, pero los quince... ","firstQuote":"Quince años es pasar de la niñez a la adolescencia, entrar a un mundo desconocido y nuevo, continuar sintiéndose querida y acompañada, celebrar lo vivido hasta aquí, comenzar una nueva etapa.","secondQuote":"La luna se encuentra en tu sonrisa y el sol en tu mirada.","section2":"Los momentos más importantes de la vida se convierten en inolvidables cuando los compartes con quienes más amas."},"godParents":[{"godMother":"Madrina","godFather":"Padrino","role":"XV Años"},{"role":"XV Años","godMother":"Madrina","godFather":"Padrino"}],"ampm":"pm","date":"02-12-2022","time":"06:00","owner":{"phone":3338454848,"email":"jerp27@gmail.com","addess":"Fresno 30","name":"J Eutiquio"},"godparents":{"godMother":"Emma Evelia Sandoval García","godFather":"Jesús Esparza Romero"},"urlPath":"cami-20120212","celebrantName":"Camila Guadalupe Rodríguez González","type":"basic, premium, golden","eventSubtitle":"Bienvenidos al inicio de mi cuento de hadas.","parents":{"father":"J. Eutiquio Rodríguez Parra","mother":"Sandra Celina González Monroy"},"guests":[{"email":"jerp27@gmail.com","phone":3338454848,"id":"famrodgon","name":"Eutiquio","userGuest":{},"admissions":3,"hasConfirmed":false}],"locations":{"ceremony":{"address":"C. Puerto Yavaros, Miramar, 45060 Zapopan, Jal.","location":"Emporio Salon de Eventos","link":"https://www.google.com/maps/place/Emporio+Sal%C3%B3n+De+Eventos/@20.6366954,-103.4412077,15z/data=!4m5!3m4!1s0x0:0x815816c0861e99f!8m2!3d20.6366918!4d-103.4411821","title":"Ceremonia Religiosa","time":"05:30 PM"},"cocktail":{"location":"Emporio Salon de Eventos","title":"Recepción","time":"06:30 PM","address":"C. Puerto Yavaros, Miramar, 45060 Zapopan, Jal.","link":"https://www.google.com/maps/place/Emporio+Sal%C3%B3n+De+Eventos/@20.6366954,-103.4412077,15z/data=!4m5!3m4!1s0x0:0x815816c0861e99f!8m2!3d20.6366918!4d-103.4411821"}}}`));
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, [])
   // useEffect(() => {
   //   if (paramId) {
@@ -103,8 +96,33 @@ function Events() {
   })
 
   return (
-    <div className="main">
-      {eventData && (
+    <div className={`main events
+      ${isMobile ? 'is-mobile' : ''}
+      ${isIOS ? 'is-ios' : ''}
+      ${isLandscape ? 'is-landscape' : ''}`
+    }>
+      {loading && (
+        <div className="event__loader">
+          <div className='stars'></div>
+          <div className='stars2'></div>
+          <div className='stars3'></div>
+          <div className='event__loader-content'>
+            <div className="event__loader-container">
+              <Suspense fallback={<div>Loading...</div>}>
+                <Separator />
+              </Suspense>
+              <div className="pt-4"></div>
+            <Hearts arialLabel="loading-indicator" color="#0833A2" width="250" />
+              <p className="primary-font type-bold-48 text-3d">Loading...</p>
+              <div className="pt-4"></div>
+              <Suspense fallback={<div>Loading...</div>}>
+                <Separator />
+              </Suspense>
+            </div>
+          </div>
+        </div>
+      )}
+      {eventData && !loading && (
         <>
           <section className="event__intro">
             <Intro title={eventData.eventTitle} subtitle={eventData.eventSubtitle} />
@@ -207,6 +225,7 @@ function Events() {
               </div>
             </div>
           </section>
+
           <section className="event-gift-section">
             <Suspense fallback={<div>Loading...</div>}>
               <GiftOptions config={eventData.properties.giftTable} />
@@ -236,7 +255,9 @@ function Events() {
           <Suspense fallback={<div>Loading...</div>}>
             <Separator />
           </Suspense>
-          <Parallax strength={-200} className="event__footer-bg" bgImage={celebrantFooterBg}>
+          <Parallax strength={-200} className="event__footer-bg"
+            bgImage={isLandscape ? celebrantFooterBgLarge : celebrantFooterBg}
+          >
             <div className="event_min-height"></div>
           </Parallax>
           <Suspense fallback={<div>Loading...</div>}>
@@ -247,11 +268,13 @@ function Events() {
             <Parallax strength={300} bgImage={celebrationBg}>
               <div className="event_min-height">
                 <Plx parallaxData={parallaxData.dontMiss}>
-                  <div className="mx-auto text-center text-white m-5">
-                    <p className="type-normal-48 primary-font py-5">Te esperamos</p>
-                    <p className="type-normal-48 primary-font ">¡No Faltes!</p>
-                    <p className="type-normal-48 primary-font pt-5">XV</p>
-                    <p className="type-normal-48 primary-font">Camila</p>
+                  <div className="mx-auto text-center text-white">
+                    <p className="type-normal-48 primary-font">Te esperamos</p>
+                    <p className="type-normal-48 primary-font">¡No Faltes!</p>
+                    <div className="event__dont-miss--labels">
+                      <p className="type-normal-48 primary-font">XV's</p>
+                      <p className="type-normal-48 primary-font">Camila</p>
+                    </div>
                   </div>
                 </Plx>
               </div>
@@ -262,7 +285,6 @@ function Events() {
           </div>
         </>
       )}
-
     </div>
   );
 }

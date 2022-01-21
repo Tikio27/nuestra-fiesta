@@ -53,3 +53,23 @@
   from { -webkit-mask-position: 150%; }
   to { -webkit-mask-position: -50%; }
 }
+
+.arrow-icon {
+  height: 50px;
+}
+
+.arrow {
+  border: solid $white;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 15px;
+
+  &.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 30px;
+  }
+}

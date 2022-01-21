@@ -5,9 +5,6 @@ import InfoCardData from './infoCardData';
 
 export default function InfoCard({ ceremony, cocktail }) {
 
-  console.log(JSON.stringify(ceremony));
-  console.log(JSON.stringify(cocktail));
-  // console.log(`Cocktail: ${JSON.stringify(cocktail)}`);
   return (
     <>
       <div className="info-card over-hide">

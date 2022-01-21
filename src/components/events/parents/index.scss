@@ -2,30 +2,13 @@
 @import '../../../core.scss';
 
 .parents-container {
-  .text-big {
-    font-size: 5rem;
-    font-weight: 800 !important;
-  }
 
-  .blur-text {
-    text-transform: uppercace;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    color: white;
-    margin: 5;
-    letter-spacing: 2.5px;
-    line-height: 50px;
-  }
+  .blur-text,
   .blur-text-godparents {
-    text-transform: uppercace;
     position: sticky;
     top: 0;
     z-index: 999;
     color: white;
-    margin: 5;
-    letter-spacing: 2.5px;
-    line-height: 50px;
   }
 
   .blur-plx {

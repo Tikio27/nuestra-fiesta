@@ -1,5 +1,5 @@
 import './App.scss';
-// import 'animate.css'; //npm install animate.css
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import React from 'react';
 import Events from './components/events';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

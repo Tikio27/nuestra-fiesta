@@ -33,12 +33,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/i,
-        exclude: /nodeModules/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-      {
-        test: /\.(sc|c)ss$/,
+        test: /\.s?css$/,
         exclude: /nodeModules/,
         enforce: 'pre',
         use: [

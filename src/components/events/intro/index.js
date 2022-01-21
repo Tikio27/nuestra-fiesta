@@ -7,7 +7,7 @@ import Sparkles from "../../utils/sparkle";
 const style = {
   alignItems: "center",
   width: "100%",
-  height: "300vh",
+  height: "200vh",
   display: "flex",
   flexDirection: "column",
   backgroundRepeat: "no-repeat",
@@ -59,7 +59,8 @@ export const Intro = ({ title, subtitle }) => {
                         duration: 3
                       }}
                     >
-                      <i className="bi bi-arrow-down-square-fill py-4" style={{color: 'white', width: '50px' }}></i>
+                      <div className="arrow-icon"><i className="arrow down" /></div>
+                      <div className="arrow-icon"><i className="arrow down" /></div>
                     </DIV>
                   </div>
                 </>
