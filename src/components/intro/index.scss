@@ -1,0 +1,47 @@
+
+@import '../../core.scss';
+
+.event__intro * {
+  transform-style: preserve-3d;
+}
+
+.event_intro--bg {
+  background-image: url('../../../public/assets/img/bg/moon_1@2x.png');
+  @include media-breakpoint-up(lg) {
+    background-image: url('../../../public/assets/img/bg/moon_1@3x.png');
+  }
+}
+
+.intro-container {
+  position: sticky;
+  top: 0%;
+  bottom: 10%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    top: 10%;
+  }
+}
+
+.intro-content {
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    .intro-text {
+      font-size: 36px;
+    }
+    font-size: 48px;
+  }
+}
+
+.intro-text {
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  .is-landscape.is-mobile & {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}

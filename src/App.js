@@ -1,12 +1,33 @@
 import './App.scss';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import React from 'react';
-import Events from './components/events';
+import Events from './events';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ParallaxProvider } from 'react-scroll-parallax';
 class App extends React.Component {
 
+  state = {
+    loading: true
+  };
+
+  componentDidMount() {
+    this.fakeRequest().then(() => {
+      const el = document.getElementById('loader-container');
+      if (el) {
+        el.remove();  // removing the spinner element
+        this.setState({ loading: false }); // showing the app
+      }
+    });
+  }
+
+  fakeRequest = () => {
+    return new Promise(resolve => setTimeout(() => resolve(), 2500));
+  };
+
   render() {
+    if (this.state.loading) {
+      return null; //app is not ready (fake request is in process)
+    }
+
     return (
       <ParallaxProvider>
         <main>

@@ -1,15 +1,25 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const NODE_MODULES = path.join(__dirname, './node_modules');
 const jsonImporter = require('node-sass-json-importer');
 
 module.exports = {
-  entry: './src/index.js',
+  // entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    app: './src/App.js',
+    loader: './src/components/load-spinner/index.js',
+    gift: './src/components/gift-options/index.js',
+    events: './src/events/index.js'
+  },
   // Where files should be sent once they are bundled
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'index.bundle.js',
+    // filename: 'index.bundle.js',
+    filename: "[name].bundle.js",
+    chunkFilename: "[name].chunk.js",
     publicPath: '/',
     assetModuleFilename: 'assets/img/[hash][ext][query]',
     clean: true,
@@ -62,10 +72,16 @@ module.exports = {
       },
     ]
   },
+  optimization: {
+    splitChunks: {
+      // include all types of chunks
+      chunks: 'all',
+    },
+    runtimeChunk: 'single'
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      inject: false
+      template: './src/index.html'
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
@@ -73,5 +89,6 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /es-mx/)
   ],
 }
