@@ -2,7 +2,7 @@ import './index.scss';
 import React, { useState, useEffect, Suspense } from 'react';
 // import { db } from '../db/firebase';
 // import { collection, getDocs, query, where } from 'firebase/firestore/lite';
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { Parallax } from 'react-parallax';
 import Plx from 'react-plx';
 import { useMediaQuery } from 'react-responsive';
@@ -37,10 +37,10 @@ import celebrationBg from '../../public/assets/img/celebration.jpeg';
 import StaySafe from '../components/stay-safe';
 
 function Events() {
-  const { id, guest } = useParams();
+  // const { id, guest } = useParams();
   const [eventData, setEventData] = useState();
-  const [eventId, setEventId] = useState();
-  const [paramId, setParamId] = useState();
+  // const [eventId, setEventId] = useState();
+  // const [paramId, setParamId] = useState();
   // const [error, setError] = useState(false);
   // const [loading, setLoading] = useState(true);
 
@@ -48,11 +48,11 @@ function Events() {
   const [selectors, data] = useDeviceSelectors(window.navigator.userAgent)
   const { isMobile, isIOS } = selectors;
 
-  useEffect(() => {
-    if (id) {
-      setParamId(id);
-    }
-  }, [id]);
+  // useEffect(() => {
+  //   if (id) {
+  //     setParamId(id);
+  //   }
+  // }, [id]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -214,7 +214,7 @@ function Events() {
             <Parallax strength="500" bgImage={rsvpBg} className="event__background">
               <Plx parallaxData={parallaxData.rsvp}>
                 <Suspense fallback={<div>Loading...</div>}>
-                  <RsvpCard eventId={eventId} eventData={eventData} />
+                  <RsvpCard eventData={eventData} />
                 </Suspense>
               </Plx>
             </Parallax>

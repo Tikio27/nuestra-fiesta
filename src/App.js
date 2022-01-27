@@ -1,7 +1,7 @@
 import './App.scss';
 import React from 'react';
 import Events from './events';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ParallaxProvider } from 'react-scroll-parallax';
 class App extends React.Component {
 
@@ -31,7 +31,8 @@ class App extends React.Component {
     return (
       <ParallaxProvider>
         <main>
-          <Router>
+          <Events />
+          {/* <Router>
             <Switch>
               <Route path="/:id/:guest">
                   <Events/>
@@ -40,7 +41,7 @@ class App extends React.Component {
                 <Events />
               </Route>
             </Switch>
-          </Router>
+          </Router> */}
         </main>
       </ParallaxProvider>
     );
