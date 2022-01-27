@@ -46,8 +46,8 @@ export default function Events({parents, godparents}) {
       >
         <div className="event__parents-content text-center blur-text mt-5">
           <p className="parents-title secondary-font text-shadow_border type-bold-18">Brindis</p>
-          <p className="parents-name primary-font text-shadow_border text-white type-bold-36">Sofia Dafne De la Rosa Jara</p>
-          <p className="parents-name primary-font text-shadow_border text-white type-bold-36">Arturo Morelia Resendis</p>
+          <p className="parents-name primary-font text-shadow_border text-white type-bold-36">Sara Rodriguez</p>
+          <p className="parents-name primary-font text-shadow_border text-white type-bold-36">Daniel Resendis</p>
         </div>
       </div>
       <div className="blur-plx">

@@ -18,7 +18,7 @@ function RsvpCard({ guestId, eventId, eventData}) {
               <Button variant="outline-primary" onClick={handleShow}>Confirma tu Asistencia</Button>
             )}
             {!guestId && (
-              <a href="https://wa.me/523338147840?text=Hola%21%20confirmo%20mi%20asistencia%20a%20los%20XV%27s%20de%20Camila&lang=es"
+              <a href="https://wa.me/52123456789?text=Hola%21%20confirmo%20mi%20asistencia&lang=es"
                 target="_blank"
                 className="btn btn-light btn-lg">Confirma tu Asistencia</a>
             )}
