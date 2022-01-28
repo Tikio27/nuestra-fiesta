@@ -9,7 +9,7 @@ import quoteBg from '../../../public/assets/img/bg/celestial-backgrounds-12.jpg'
 function Quotes({firstQuote, secondQuote, imgFirstQuote, imgSecondQuote }) {
   return (
     <section className="event__quotes event__section-layout">
-      <Parallax strength={300} bgImage={quoteBg}>
+      <Parallax strength={300} bgImage={quoteBg} className="event__quotes--bg">
         <div className="container">
           <ScrollParallax x={[-150, 0]}>
             <div className="imgBx jarallax">

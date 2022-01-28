@@ -129,7 +129,7 @@
 .event__celebrant-bg {
   height: 150vh;
   img {
-    height: auto !important;
+    height: 150vh !important;
   }
   /* Landscape */
   @media only screen 
@@ -138,6 +138,9 @@
     and (-webkit-min-device-pixel-ratio: 2)
     and (orientation: landscape) {
       height: 200vh;
+      img {
+        height: 200vh !important;
+      }
   }
 }
 
