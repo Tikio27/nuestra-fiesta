@@ -2,8 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const NODE_MODULES = path.join(__dirname, './node_modules');
-const jsonImporter = require('node-sass-json-importer');
 
 module.exports = {
   // entry: './src/index.js',
@@ -59,17 +57,9 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|gif|jpeg|webp|svg)$/i,
+        test: /\.(png|jpg|gif|jpeg|webp|svg|ttf)$/i,
         type: 'asset/resource'
-      },
-      {
-        test: /\.(png|jpg|gif|jpeg|webp|svg)$/i,
-        type: 'asset/inline'
-      },
-      {
-        test: /\.(ttf)$/i,
-        type: 'asset/resource'
-      },
+      }
     ]
   },
   optimization: {
