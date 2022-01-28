@@ -59,17 +59,9 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|gif|jpeg|webp|svg)$/i,
+        test: /\.(png|jpg|gif|jpeg|webp|svg|ttf)$/i,
         type: 'asset/resource'
-      },
-      {
-        test: /\.(png|jpg|gif|jpeg|webp|svg)$/i,
-        type: 'asset/inline'
-      },
-      {
-        test: /\.(ttf)$/i,
-        type: 'asset/resource'
-      },
+      }
     ]
   },
   optimization: {
