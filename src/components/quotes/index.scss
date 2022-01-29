@@ -95,10 +95,6 @@
   }
 }
 
-.event__quotes-bg img {
+.event__quotes-bg > img {
   width: auto !important;
-}
-
-.event__quotes-text {
-  // background-image: url("/public/assets/img/frames/quote2.png");
 }
