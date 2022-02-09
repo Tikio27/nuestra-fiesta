@@ -34,6 +34,7 @@ import celebrantFooterBg from '../../public/assets/img/celebrant/footer_bg.jpg';
 import celebrantFooterBgLarge from '../../public/assets/img/celebrant/footer_bg-large.jpg';
 // import imgDressCode from '../../../public/assets/img/dresscode.png';
 import celebrationBg from '../../public/assets/img/celebration.jpeg';
+import clickIcon from '../../public/assets/img/tap.png';
 import StaySafe from '../components/stay-safe';
 
 function Events() {
@@ -255,6 +256,14 @@ function Events() {
               </div>
             </Parallax>
           </section>
+          <div className="rsvp-btn-fixed">
+            <a href="https://wa.me/523338147840?text=Hola%21%20confirmo%20mi%20asistencia%20a%20los%20XV%27s%20de%20Camila&lang=es"
+              target="_blank"
+              className="btn btn-primary btn-lg">
+              <img className="pe-2" src={clickIcon} alt='click icon' />
+              <span>Confirma tu Asistencia</span>
+            </a>
+          </div>
           <div className="footer-bottom">
             Powered by @tikio27
           </div>
